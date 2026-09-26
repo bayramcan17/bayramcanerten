@@ -62,3 +62,10 @@
 - GitHub: https://github.com/bayramcan17/bayramcanerten (public), Vercel projesine bağlı; `main`'e her push production'a otomatik yayın (doğrulandı: 14bf9a7).
 - Fonksiyon bölgesi `vercel.json` ile **fra1 (Frankfurt)**; varsayılan iad1 (ABD) Türkiye'ye uzaktı.
 - Not: `~/.config` klasörü root'a aitti; `gh` giriş bilgisini yazamıyordu. Kullanıcı `sudo chown` ile düzeltti.
+
+## Faz 6 — 2026-09-26
+
+- DNS: **A) GoDaddy'de kalır**. Ana adres: **A) bayramcanerten.com**, `www` → 308 ile ana adrese.
+- GoDaddy kayıtları: `A @ 216.198.79.1`, `CNAME www 26626799dda9cd4c.vercel-dns-017.com` (Vercel API'nin önerdiği değerler). Park sayfası A kaydı kaldırıldı. `_dmarc` ve `_domainconnect` GoDaddy varsayılanı olarak duruyor.
+- SSL: Let's Encrypt, Vercel otomatik yeniliyor.
+- HSTS: Vercel özel domainde zaten `max-age=63072000` gönderiyor; Django'da aynı değer. `includeSubDomains` ve `preload` yok.

@@ -65,7 +65,9 @@ SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
 # Vercel terminates TLS and forwards X-Forwarded-Proto.
 SECURE_SSL_REDIRECT = not DEBUG
-# HSTS is enabled in Phase 6, after the custom domain works.
+# Matches the HSTS header Vercel already sends on the custom domain (2 years).
+# Subdomains and preload are intentionally left out.
+SECURE_HSTS_SECONDS = 0 if DEBUG else 63072000
 
 # The site has no forms or cookies, so CSRF middleware is intentionally omitted.
 SILENCED_SYSTEM_CHECKS = ["security.W003"]
