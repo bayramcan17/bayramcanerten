@@ -69,3 +69,12 @@
 - GoDaddy kayıtları: `A @ 216.198.79.1`, `CNAME www 26626799dda9cd4c.vercel-dns-017.com` (Vercel API'nin önerdiği değerler). Park sayfası A kaydı kaldırıldı. `_dmarc` ve `_domainconnect` GoDaddy varsayılanı olarak duruyor.
 - SSL: Let's Encrypt, Vercel otomatik yeniliyor.
 - HSTS: Vercel özel domainde zaten `max-age=63072000` gönderiyor; Django'da aynı değer. `includeSubDomains` ve `preload` yok.
+
+## Faz 7 — atlandı
+
+- Kişisel e-posta şimdilik kurulmadı (kullanıcı kararı). Kurulursa DNS GoDaddy'de olduğu için MX/TXT kayıtları oraya eklenir.
+
+## Faz 8 — 2026-09-26
+
+- README bakım kılavuzu: yerelde çalıştırma, proje/işletme ekleme (örnekli), görsel ekleme (boyutlar, WebP, KVKK), yayın akışı, Google Play rozeti güncelleme, DNS kayıtları.
+- Yeni rozet türü `googleplay` (linkli rozetlerle aynı görünüm) Google Play yayınlanınca kullanılacak.

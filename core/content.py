@@ -1,7 +1,8 @@
 """All site content lives here. Edit this file to change text or links.
 
-Badge kinds: "live", "web", "appstore", "soon" (styling). Icons: see
-core/templates/core/partials/icon.html. Images live in core/static/core/img/.
+See README.md ("İçerik düzenleme") for field descriptions and examples.
+Badge kinds: "web", "appstore", "googleplay" (linked), "soon", "live".
+Icons: core/templates/core/partials/icon.html. Images: core/static/core/img/.
 """
 
 SITE = {
