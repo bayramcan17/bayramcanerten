@@ -2,6 +2,8 @@
 
 Kişisel kartvizit sitesi. Django 5.2 LTS; Vercel'de (Hobby) Vercel Function olarak çalışır. Veritabanı yoktur.
 
+Canlı: https://bayramcanerten.vercel.app
+
 ## Kurulum
 
 ```bash
@@ -35,3 +37,7 @@ Sitedeki tüm metinler ve linkler `core/content.py` dosyasındadır. Şablonlard
 |---|---|
 | `SECRET_KEY` | Üretimde zorunlu. Vercel → Settings → Environment Variables |
 | `DEBUG` | `True` yalnızca yerelde. Varsayılan `False` |
+
+## Yayın
+
+`main` dalına her push'ta Vercel otomatik olarak yayınlar. Diğer dallar önizleme (preview) adresi alır.
