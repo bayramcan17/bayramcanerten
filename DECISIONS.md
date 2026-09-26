@@ -39,3 +39,8 @@
 - Font: başlıklarda tek web fontu **Fraunces** (Google Fonts), gövde metni sistem fontu.
 - Açık/koyu tema `prefers-color-scheme` ile; renkler `:root`'ta CSS değişkeni. Logolar koyu temada da açık renkli bir zeminde durur.
 - İkonlar satır içi SVG (`core/templates/core/partials/icon.html`). Sayfada JavaScript yok.
+
+## Faz 3 — 2026-09-26
+
+- Metinler onaylandı. Kaynaklar: Tenis Asistanı kendi sitesi, otel bilgisi kullanıcı + assoskadirgaotel.com, otel-panel özellikleri ekran görüntüleri.
+- Kullanıcı metin/içerik ifadelerinde karar yetkisini verdi; bundan sonra metin taslakları için ayrıca onay istenmeyecek (yalnızca verilen bilgilere dayanılacak).

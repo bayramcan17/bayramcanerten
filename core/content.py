@@ -80,7 +80,10 @@ SITE = {
     "businesses": [
         {
             "name": "Assos Kadırga Otel",
-            "summary": "Behram, Ayvacık/Çanakkale'de 45 odalı otel. 1979'dan beri.",
+            "summary": (
+                "Behram, Ayvacık/Çanakkale'de deniz kenarında, bahçe içinde "
+                "butik bir aile işletmesi. 1979'dan beri."
+            ),
             "logo": {"src": "core/img/assos-kadirga-otel.webp", "width": 480, "height": 268},
             "icon": None,
             "links": [
@@ -94,7 +97,7 @@ SITE = {
         },
         {
             "name": "Erten Yapı Market",
-            "summary": "Ayvacık/Çanakkale'de yapı market.",
+            "summary": "Ayvacık/Çanakkale'de temelden çatıya yapı malzemeleri.",
             "logo": None,
             "icon": "store",
             "links": [
