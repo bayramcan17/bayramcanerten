@@ -59,3 +59,6 @@
 - `SECRET_KEY` Vercel'de Production ve Preview için ayrı ayrı, "sensitive" olarak üretildi; hiçbir dosyada yok. `DEBUG` tanımlı değil (varsayılan `False`).
 - Canlıda: brotli sıkıştırma açık, güvenlik başlıkları geliyor, http → https yönlendirmesi çalışıyor. Lighthouse (canlı): mobil ve masaüstü 100/100/100/100.
 - Statik dosyalar `max-age=0, must-revalidate` ile sunuluyor (Vercel varsayılanı). Dosya adları hash'li olmadığı için uzun önbellek bilerek açılmadı.
+- GitHub: https://github.com/bayramcan17/bayramcanerten (public), Vercel projesine bağlı; `main`'e her push production'a otomatik yayın (doğrulandı: 14bf9a7).
+- Fonksiyon bölgesi `vercel.json` ile **fra1 (Frankfurt)**; varsayılan iad1 (ABD) Türkiye'ye uzaktı.
+- Not: `~/.config` klasörü root'a aitti; `gh` giriş bilgisini yazamıyordu. Kullanıcı `sudo chown` ile düzeltti.
