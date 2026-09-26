@@ -1,0 +1,8 @@
+<footer>
+  <p>© {% now "Y" %} · {{ site.name }}</p>
+  <ul>
+    {% for social in site.socials %}
+      <li><a href="{{ social.url }}" target="_blank" rel="noopener">{{ social.label }}</a></li>
+    {% endfor %}
+  </ul>
+</footer>

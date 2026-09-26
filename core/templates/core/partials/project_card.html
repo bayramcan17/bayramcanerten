@@ -1,0 +1,9 @@
+<article>
+  <h3>{{ project.name }}</h3>
+  <p>{{ project.summary }}</p>
+  <ul>
+    {% for badge in project.badges %}
+      <li>{% if badge.url %}<a href="{{ badge.url }}" target="_blank" rel="noopener">{{ badge.label }}</a>{% else %}{{ badge.label }}{% endif %}</li>
+    {% endfor %}
+  </ul>
+</article>

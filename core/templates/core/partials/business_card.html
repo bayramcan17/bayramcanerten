@@ -1,0 +1,9 @@
+<article>
+  <h3>{{ business.name }}</h3>
+  <p>{{ business.summary }}</p>
+  <ul>
+    {% for link in business.links %}
+      <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a></li>
+    {% endfor %}
+  </ul>
+</article>
