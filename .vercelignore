@@ -1,0 +1,11 @@
+.venv
+.idea
+.claude
+.git
+staticfiles
+__pycache__
+*.pyc
+.env*
+PLAN.md
+DECISIONS.md
+TODO.md
