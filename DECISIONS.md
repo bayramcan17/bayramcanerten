@@ -52,3 +52,10 @@
 - Performans: Google Fonts stili render'ı bloklamadan yüklenir (`media="print"` + `onload`, JS kapalıysa `<noscript>`). otel-panel ekran görüntülerinin 800 px küçük sürümleri `srcset` ile sunulur.
 - Lighthouse (yerel, üretim ayarları): mobil ve masaüstü 100/100/100/100. Metin sıkıştırma ve uzun önbellek uyarıları yerel sunucudan; Vercel'de doğrulanacak (Faz 5).
 - Google Fonts yerine fontu kendi sunucumuzda barındırmak ileride düşünülebilir (gizlilik: ziyaretçi IP'si Google'a gitmez).
+
+## Faz 5 — 2026-09-26
+
+- Vercel projesi: `bayramcanerten` (hesap: bayramcan17s-projects), Vercel CLI 54.21 ile yayınlandı. Adres: https://bayramcanerten.vercel.app
+- `SECRET_KEY` Vercel'de Production ve Preview için ayrı ayrı, "sensitive" olarak üretildi; hiçbir dosyada yok. `DEBUG` tanımlı değil (varsayılan `False`).
+- Canlıda: brotli sıkıştırma açık, güvenlik başlıkları geliyor, http → https yönlendirmesi çalışıyor. Lighthouse (canlı): mobil ve masaüstü 100/100/100/100.
+- Statik dosyalar `max-age=0, must-revalidate` ile sunuluyor (Vercel varsayılanı). Dosya adları hash'li olmadığı için uzun önbellek bilerek açılmadı.
