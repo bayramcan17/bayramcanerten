@@ -1,6 +1,7 @@
 """All site content lives here. Edit this file to change text or links.
 
-Badge kinds: "live", "web", "appstore", "soon", "internal".
+Badge kinds: "live", "web", "appstore", "soon" (styling). Icons: see
+core/templates/core/partials/icon.html. Images live in core/static/core/img/.
 """
 
 SITE = {
@@ -35,15 +36,16 @@ SITE = {
             "summary": (
                 "Tenis ekipmanlarını ve maçları takip eden uygulama."
             ),
-            "logo": "core/img/tenis-asistani.webp",
+            "logo": {"src": "core/img/tenis-asistani.webp", "width": 256, "height": 256},
             "badges": [
-                {"kind": "web", "label": "Web", "url": "https://tenisasistani.com"},
+                {"kind": "web", "icon": "web", "label": "Web", "url": "https://tenisasistani.com"},
                 {
                     "kind": "appstore",
+                    "icon": "appstore",
                     "label": "App Store",
                     "url": "https://apps.apple.com/us/app/tenis-asistan%C4%B1/id6791199819",
                 },
-                {"kind": "soon", "label": "Google Play — Yakında", "url": None},
+                {"kind": "soon", "icon": "play", "label": "Google Play — Yakında", "url": None},
             ],
             "screenshots": [],
         },
@@ -55,15 +57,19 @@ SITE = {
             ),
             "logo": None,
             "badges": [
-                {"kind": "live", "label": "Canlıda · Dahili kullanım", "url": None},
+                {"kind": "live", "icon": "live", "label": "Canlıda · Dahili kullanım", "url": None},
             ],
             "screenshots": [
                 {
                     "src": "core/img/otel-panel-dashboard.webp",
+                    "width": 1623,
+                    "height": 1095,
                     "alt": "otel-panel ana paneli: gelir, gider ve ödeme yöntemi özetleri",
                 },
                 {
                     "src": "core/img/otel-panel-islemler.webp",
+                    "width": 1968,
+                    "height": 1081,
                     "alt": "otel-panel gelir ve gider işlemleri listesi",
                 },
             ],
@@ -73,7 +79,8 @@ SITE = {
         {
             "name": "Assos Kadırga Otel",
             "summary": "Behram, Ayvacık/Çanakkale. 1979'dan beri.",
-            "logo": "core/img/assos-kadirga-otel.webp",
+            "logo": {"src": "core/img/assos-kadirga-otel.webp", "width": 480, "height": 351},
+            "icon": None,
             "links": [
                 {"label": "Web", "icon": "web", "url": "https://assoskadirgaotel.com"},
                 {
@@ -87,6 +94,7 @@ SITE = {
             "name": "Erten Yapı Market",
             "summary": "Ayvacık/Çanakkale.",
             "logo": None,
+            "icon": "store",
             "links": [
                 {
                     "label": "Haritada gör",

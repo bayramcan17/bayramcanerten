@@ -1,9 +1,21 @@
-<article>
-  <h3>{{ business.name }}</h3>
-  <p>{{ business.summary }}</p>
-  <ul>
+{% load static %}
+<article class="card card--business">
+  <div class="card__media">
+    {% if business.logo %}
+      <img src="{% static business.logo.src %}" width="{{ business.logo.width }}" height="{{ business.logo.height }}" alt="{{ business.name }} logosu" loading="lazy">
+    {% else %}
+      <span class="card__placeholder">{% include "core/partials/icon.html" with name=business.icon %}</span>
+    {% endif %}
+  </div>
+  <h3 class="card__title">{{ business.name }}</h3>
+  <p class="card__text">{{ business.summary }}</p>
+  <ul class="links" role="list">
     {% for link in business.links %}
-      <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a></li>
+      <li>
+        <a class="links__item" href="{{ link.url }}" target="_blank" rel="noopener">
+          {% include "core/partials/icon.html" with name=link.icon %}<span>{{ link.label }}</span>
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </article>

@@ -1,8 +1,14 @@
-<footer>
-  <p>© {% now "Y" %} · {{ site.name }}</p>
-  <ul>
-    {% for social in site.socials %}
-      <li><a href="{{ social.url }}" target="_blank" rel="noopener">{{ social.label }}</a></li>
-    {% endfor %}
-  </ul>
+<footer class="footer">
+  <div class="footer__inner">
+    <p>© {% now "Y" %} · {{ site.name }}</p>
+    <ul class="socials socials--small" role="list">
+      {% for social in site.socials %}
+        <li>
+          <a class="socials__link" href="{{ social.url }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
+            {% include "core/partials/icon.html" with name=social.icon %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </footer>

@@ -1,21 +1,25 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-<main>
-  {% include "core/partials/hero.html" %}
+{% include "core/partials/hero.html" %}
 
-  <section aria-labelledby="projects-title">
-    <h2 id="projects-title">{{ site.sections.projects }}</h2>
-    {% for project in site.projects %}
-      {% include "core/partials/project_card.html" %}
-    {% endfor %}
+<main class="container">
+  <section class="section" aria-labelledby="projects-title">
+    <h2 class="section__title" id="projects-title">{{ site.sections.projects }}</h2>
+    <div class="stack">
+      {% for project in site.projects %}
+        {% include "core/partials/project_card.html" %}
+      {% endfor %}
+    </div>
   </section>
 
-  <section aria-labelledby="businesses-title">
-    <h2 id="businesses-title">{{ site.sections.businesses }}</h2>
-    {% for business in site.businesses %}
-      {% include "core/partials/business_card.html" %}
-    {% endfor %}
+  <section class="section" aria-labelledby="businesses-title">
+    <h2 class="section__title" id="businesses-title">{{ site.sections.businesses }}</h2>
+    <div class="grid">
+      {% for business in site.businesses %}
+        {% include "core/partials/business_card.html" %}
+      {% endfor %}
+    </div>
   </section>
 </main>
 {% endblock %}

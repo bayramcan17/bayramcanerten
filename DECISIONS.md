@@ -31,3 +31,11 @@
 - CSRF middleware yok (formsuz, çerezsiz site); `security.W003` gerekçesiyle susturuldu.
 - `SECURE_SSL_REDIRECT = not DEBUG`. HSTS Faz 6'da açılacak.
 - otel-panel ekran görüntülerinde tutarlar, firma adları, açıklamalar ve panel adresi gizlendi.
+
+## Faz 2 — 2026-09-26
+
+- Görsel yön: **B) Ege esintili**. Deniz mavisi (`#24557a`, otel logosundaki ton) ve kum tonları, yumuşak köşeler, hero altında dalga motifi.
+- Monogram: "BCE" harfleri, deniz mavisi daire içinde iki dalga çizgisiyle (satır içi SVG).
+- Font: başlıklarda tek web fontu **Fraunces** (Google Fonts), gövde metni sistem fontu.
+- Açık/koyu tema `prefers-color-scheme` ile; renkler `:root`'ta CSS değişkeni. Logolar koyu temada da açık renkli bir zeminde durur.
+- İkonlar satır içi SVG (`core/templates/core/partials/icon.html`). Sayfada JavaScript yok.

@@ -1,10 +1,18 @@
-<header>
-  <h1>{{ site.name }}</h1>
-  <p>{{ site.title }}</p>
-  <p><small>{{ site.school }}</small></p>
-  <ul>
-    {% for social in site.socials %}
-      <li><a href="{{ social.url }}" target="_blank" rel="noopener">{{ social.label }}</a></li>
-    {% endfor %}
-  </ul>
+<header class="hero">
+  <div class="hero__inner">
+    {% include "core/partials/monogram.html" %}
+    <h1 class="hero__name">{{ site.name }}</h1>
+    <p class="hero__title">{{ site.title }}</p>
+    <p class="hero__school">{{ site.school }}</p>
+    <ul class="socials" role="list">
+      {% for social in site.socials %}
+        <li>
+          <a class="socials__link" href="{{ social.url }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
+            {% include "core/partials/icon.html" with name=social.icon %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% include "core/partials/waves.html" %}
 </header>

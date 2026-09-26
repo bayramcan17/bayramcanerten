@@ -1,9 +1,26 @@
-<article>
-  <h3>{{ project.name }}</h3>
-  <p>{{ project.summary }}</p>
-  <ul>
+{% load static %}
+<article class="card">
+  <div class="card__head">
+    {% if project.logo %}
+      <img class="card__logo" src="{% static project.logo.src %}" width="{{ project.logo.width }}" height="{{ project.logo.height }}" alt="{{ project.name }} logosu" loading="lazy">
+    {% endif %}
+    <div>
+      <h3 class="card__title">{{ project.name }}</h3>
+      <p class="card__text">{{ project.summary }}</p>
+    </div>
+  </div>
+  <ul class="badges" role="list">
     {% for badge in project.badges %}
-      <li>{% if badge.url %}<a href="{{ badge.url }}" target="_blank" rel="noopener">{{ badge.label }}</a>{% else %}{{ badge.label }}{% endif %}</li>
+      <li>{% include "core/partials/badge.html" %}</li>
     {% endfor %}
   </ul>
+  {% if project.screenshots %}
+    <div class="shots">
+      {% for shot in project.screenshots %}
+        <a class="shots__item" href="{% static shot.src %}" target="_blank" rel="noopener">
+          <img src="{% static shot.src %}" width="{{ shot.width }}" height="{{ shot.height }}" alt="{{ shot.alt }}" loading="lazy">
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
 </article>

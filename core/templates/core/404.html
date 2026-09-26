@@ -3,8 +3,13 @@
 {% block title %}Sayfa bulunamadı — {{ site.name }}{% endblock %}
 
 {% block content %}
-<main>
-  <h1>Sayfa bulunamadı</h1>
-  <p><a href="/">Ana sayfaya dön</a></p>
+<main class="hero hero--compact">
+  <div class="hero__inner">
+    {% include "core/partials/monogram.html" %}
+    <h1 class="hero__name">Sayfa bulunamadı</h1>
+    <p class="hero__title">Aradığın sayfa burada değil; dalgalar almış olabilir.</p>
+    <p><a class="button" href="/">Ana sayfaya dön</a></p>
+  </div>
+  {% include "core/partials/waves.html" %}
 </main>
 {% endblock %}

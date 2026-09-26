@@ -1,0 +1,1 @@
+{% if badge.url %}<a class="badge badge--{{ badge.kind }}" href="{{ badge.url }}" target="_blank" rel="noopener">{% include "core/partials/icon.html" with name=badge.icon %}<span>{{ badge.label }}</span></a>{% else %}<span class="badge badge--{{ badge.kind }}">{% include "core/partials/icon.html" with name=badge.icon %}<span>{{ badge.label }}</span></span>{% endif %}
