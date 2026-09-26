@@ -18,7 +18,7 @@
     <div class="shots">
       {% for shot in project.screenshots %}
         <a class="shots__item" href="{% static shot.src %}" target="_blank" rel="noopener">
-          <img src="{% static shot.src %}" width="{{ shot.width }}" height="{{ shot.height }}" alt="{{ shot.alt }}" loading="lazy">
+          <img src="{% static shot.thumb %}" srcset="{% static shot.thumb %} 800w, {% static shot.src %} {{ shot.width }}w" sizes="(min-width: 40rem) 24rem, calc(100vw - 5rem)" width="{{ shot.width }}" height="{{ shot.height }}" alt="{{ shot.alt }}" loading="lazy">
         </a>
       {% endfor %}
     </div>

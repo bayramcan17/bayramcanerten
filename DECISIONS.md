@@ -44,3 +44,11 @@
 
 - Metinler onaylandı. Kaynaklar: Tenis Asistanı kendi sitesi, otel bilgisi kullanıcı + assoskadirgaotel.com, otel-panel özellikleri ekran görüntüleri.
 - Kullanıcı metin/içerik ifadelerinde karar yetkisini verdi; bundan sonra metin taslakları için ayrıca onay istenmeyecek (yalnızca verilen bilgilere dayanılacak).
+
+## Faz 4 — 2026-09-26
+
+- SEO: title, description, canonical, Open Graph + Twitter kartı, JSON-LD `Person`, `robots.txt`, `sitemap.xml`. 404 sayfası `noindex`.
+- OG görseli `core/img/og.jpg` (1200×630, JPEG ~46 KB). Favicon seti: SVG, 32 px PNG, `.ico`, apple-touch-icon, 192/512 manifest ikonları. `/favicon.ico` statik dosyaya yönlenir.
+- Performans: Google Fonts stili render'ı bloklamadan yüklenir (`media="print"` + `onload`, JS kapalıysa `<noscript>`). otel-panel ekran görüntülerinin 800 px küçük sürümleri `srcset` ile sunulur.
+- Lighthouse (yerel, üretim ayarları): mobil ve masaüstü 100/100/100/100. Metin sıkıştırma ve uzun önbellek uyarıları yerel sunucudan; Vercel'de doğrulanacak (Faz 5).
+- Google Fonts yerine fontu kendi sunucumuzda barındırmak ileride düşünülebilir (gizlilik: ziyaretçi IP'si Google'a gitmez).

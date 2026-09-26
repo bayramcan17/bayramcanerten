@@ -1,5 +1,26 @@
 {% extends "core/base.html" %}
 
+{% block meta %}
+  {% with og_url=site.url|add:"static/"|add:site.og_image.src %}
+  <link rel="canonical" href="{{ site.url }}">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ site.name }} — {{ site.title }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:image" content="{{ og_url }}">
+  <meta property="og:image:width" content="{{ site.og_image.width }}">
+  <meta property="og:image:height" content="{{ site.og_image.height }}">
+  <meta property="og:image:alt" content="{{ site.name }} — {{ site.title }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ site.name }} — {{ site.title }}">
+  <meta name="twitter:description" content="{{ site.description }}">
+  <meta name="twitter:image" content="{{ og_url }}">
+  {% endwith %}
+  <script type="application/ld+json">{{ json_ld }}</script>
+{% endblock %}
+
 {% block content %}
 {% include "core/partials/hero.html" %}
 
