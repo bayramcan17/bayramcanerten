@@ -11,8 +11,8 @@ SITE = {
     "monogram": "BCE",
     "url": "https://bayramcanerten.com/",
     "description": (
-        "Bayram Can Erten — Bilgisayar Mühendisi. "
-        "Projeler ve işletmeler."
+        "Bayram Can Erten — Bilgisayar Mühendisi. Tenis Asistanı ve "
+        "otel-panel projeleri; Assos Kadırga Otel ve Erten Yapı Market."
     ),
     "socials": [
         {
@@ -34,7 +34,8 @@ SITE = {
         {
             "name": "Tenis Asistanı",
             "summary": (
-                "Tenis ekipmanlarını ve maçları takip eden uygulama."
+                "Kortta canlı skor tutan, antrenmanları ve ekipman ömrünü "
+                "takip eden tenis uygulaması. Apple Watch ile bilekten skor."
             ),
             "logo": {"src": "core/img/tenis-asistani.webp", "width": 256, "height": 256},
             "badges": [
@@ -52,8 +53,9 @@ SITE = {
         {
             "name": "otel-panel",
             "summary": (
-                "Assos Kadırga Otel için geliştirilmiş, canlıda aktif olarak "
-                "kullanılan otel yönetim paneli."
+                "Assos Kadırga Otel için geliştirdiğim yönetim paneli: gelir-gider, "
+                "firma bakiyeleri, personel ve denetim kaydı tek yerde. Otelde "
+                "canlıda, aktif olarak kullanılıyor."
             ),
             "logo": None,
             "badges": [
@@ -78,8 +80,8 @@ SITE = {
     "businesses": [
         {
             "name": "Assos Kadırga Otel",
-            "summary": "Behram, Ayvacık/Çanakkale. 1979'dan beri.",
-            "logo": {"src": "core/img/assos-kadirga-otel.webp", "width": 480, "height": 351},
+            "summary": "Behram, Ayvacık/Çanakkale'de 45 odalı otel. 1979'dan beri.",
+            "logo": {"src": "core/img/assos-kadirga-otel.webp", "width": 480, "height": 268},
             "icon": None,
             "links": [
                 {"label": "Web", "icon": "web", "url": "https://assoskadirgaotel.com"},
@@ -92,7 +94,7 @@ SITE = {
         },
         {
             "name": "Erten Yapı Market",
-            "summary": "Ayvacık/Çanakkale.",
+            "summary": "Ayvacık/Çanakkale'de yapı market.",
             "logo": None,
             "icon": "store",
             "links": [

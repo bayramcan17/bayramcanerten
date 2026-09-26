@@ -2,7 +2,7 @@
 <article class="card">
   <div class="card__head">
     {% if project.logo %}
-      <img class="card__logo" src="{% static project.logo.src %}" width="{{ project.logo.width }}" height="{{ project.logo.height }}" alt="{{ project.name }} logosu" loading="lazy">
+      <img class="card__logo" src="{% static project.logo.src %}" width="{{ project.logo.width }}" height="{{ project.logo.height }}" alt="{{ project.name }} logosu">
     {% endif %}
     <div>
       <h3 class="card__title">{{ project.name }}</h3>
