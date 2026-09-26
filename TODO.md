@@ -1,4 +1,8 @@
 # Eksik bilgiler
 
-- [ ] **otel-panel ekran görüntüleri** (1–2 adet): kullanıcı dosyaları verecek. Yayından önce misafir adı, telefon, TC no vb. olmadığı kontrol edilecek (KVKK).
-- [ ] **Erten Yapı Market logosu**: var mı? Yoksa isim + ikonla gösterilir.
+_Şu an eksik bilgi yok._
+
+## Tamamlananlar
+
+- [x] otel-panel ekran görüntüleri (2026-09-26): tarayıcı çubuğu ve panel adresi kırpıldı; tutarlar, firma adları ve açıklamalar (personel adları) bulanıklaştırıldı.
+- [x] Erten Yapı Market logosu: yok, isim ve ikonla gösterilecek.

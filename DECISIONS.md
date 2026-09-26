@@ -23,3 +23,11 @@
 - Assos Kadırga Otel logosu: `~/Desktop/otel-panel/public/logo.png`
 - Erten Yapı Market: Google Maps — https://share.google/aZjqFMAuBJ10gNIUq
 - otel-panel ekran görüntüleri: eklenecek (kullanıcıya göre yalnızca sayısal veri içeriyor; yine de yayından önce kişisel veri kontrolü yapılacak)
+
+## Faz 1 — 2026-09-26
+
+- Django **5.2 LTS** (6.1 güncel sürüm ama LTS değil). Bağımlılık yalnızca `requirements.txt`'teki Django.
+- WhiteNoise eklenmedi: yerelde `DEBUG=True` ile Django statik dosyaları kendisi sunuyor, üretimde Vercel CDN sunuyor.
+- CSRF middleware yok (formsuz, çerezsiz site); `security.W003` gerekçesiyle susturuldu.
+- `SECURE_SSL_REDIRECT = not DEBUG`. HSTS Faz 6'da açılacak.
+- otel-panel ekran görüntülerinde tutarlar, firma adları, açıklamalar ve panel adresi gizlendi.
