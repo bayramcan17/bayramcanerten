@@ -69,5 +69,10 @@ SECURE_SSL_REDIRECT = not DEBUG
 # Subdomains and preload are intentionally left out.
 SECURE_HSTS_SECONDS = 0 if DEBUG else 63072000
 
-# The site has no forms or cookies, so CSRF middleware is intentionally omitted.
-SILENCED_SYSTEM_CHECKS = ["security.W003"]
+SILENCED_SYSTEM_CHECKS = [
+    # The site has no forms or cookies, so CSRF middleware is intentionally omitted.
+    "security.W003",
+    # HSTS subdomains/preload are deliberately off; see HSTS note above.
+    "security.W005",
+    "security.W021",
+]
