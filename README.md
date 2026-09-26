@@ -2,7 +2,7 @@
 
 Kişisel kartvizit sitesi. Django 5.2 LTS; Vercel'de (Hobby) Vercel Function olarak çalışır. Veritabanı yoktur.
 
-Canlı: https://bayramcanerten.vercel.app
+Canlı: https://bayramcanerten.com
 
 ## Kurulum
 
