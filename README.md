@@ -149,13 +149,22 @@ git push
 | `SECRET_KEY` | Üretimde zorunlu. Vercel → Project → Settings → Environment Variables (Production ve Preview'da tanımlı) |
 | `DEBUG` | `True` yalnızca yerelde. Varsayılan `False` |
 
+## Animasyonlar
+
+Tüm efektler `core/static/core/css/site.css` (sonundaki "Motion" bölümü) ve `core/static/core/js/site.js` içindedir; harici kütüphane yoktur.
+
+- Hareketler yalnızca ziyaretçi sisteminde "hareketi azalt" seçmemişse çalışır.
+- JavaScript kapalıyken site eksiksiz çalışır; JS yalnızca tema düğmesi, imleç efektleri, ekran görüntüsü penceresi ve aktif menü bağlantısı içindir.
+- Yeni bir kartın kaydırınca belirmesi için `reveal` sınıfı, imleç ışığı/eğimi için `data-spotlight data-tilt="3"` yeterli.
+- Teknoloji etiketleri: proje sözlüğüne `"stack": ["Django", "..."]` ekle.
+
 ## Proje yapısı
 
 ```
 config/            Django ayarları, URL kökü, WSGI
 core/content.py    TÜM site içeriği
 core/templates/    base, index, 404 ve bölüm parçaları (partials/)
-core/static/core/  css/site.css, img/, favicon/
+core/static/core/  css/site.css, js/site.js, img/, favicon/
 DECISIONS.md       Alınan kararlar ve gerekçeleri
 PLAN.md            İlk uygulama planı
 ```

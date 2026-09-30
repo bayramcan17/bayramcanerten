@@ -78,3 +78,17 @@
 
 - README bakım kılavuzu: yerelde çalıştırma, proje/işletme ekleme (örnekli), görsel ekleme (boyutlar, WebP, KVKK), yayın akışı, Google Play rozeti güncelleme, DNS kayıtları.
 - Yeni rozet türü `googleplay` (linkli rozetlerle aynı görünüm) Google Play yayınlanınca kullanılacak.
+
+## Animasyonlar ve modern teknikler — 2026-09-30
+
+Kullanıcı isteği: site "tek düze", daha canlı ve güncel teknikler. Harici kütüphane **eklenmedi**; yalnızca tarayıcıların yerleşik özellikleri:
+
+- **Scroll-driven animations** (`animation-timeline: scroll()/view()`): kartların belirmesi, başlık çizgisi, teknoloji etiketleri, üstte ilerleme çubuğu, menünün cama dönüşmesi, hero'nun kaydırınca batması. Desteklemeyen tarayıcıda içerik olduğu gibi görünür.
+- **View Transitions API**: tema değişiminde düğmeden yayılan daire; ekran görüntüsünün büyüyerek pencereye dönüşmesi.
+- **`light-dark()` + `color-scheme`**: tüm renkler tek tanımda; tema düğmesi yalnızca `color-scheme`'i değiştirir. Seçim `localStorage`'da (kişisel tercih).
+- **`@property`**: isim üzerinde gezen ışık parlaması. **`@starting-style`** + `<dialog>`: pencere açılış animasyonu.
+- Diğer: hareketli dalgalar (SVG, `translate`), su üstünde parıltılar, güneş/ay, imleci takip eden ışık ve kartlarda hafif 3B eğim (yalnızca fareli cihazlarda), `text-wrap: balance/pretty`, `color-mix()`.
+- Proje kartlarına **teknoloji etiketleri** eklendi (projelerin kendi kodundan doğrulandı).
+- Erişilebilirlik: tüm hareketler `prefers-reduced-motion: no-preference` içinde; JS kapalıyken site eksiksiz (tema düğmesi gizli kalır, ekran görüntüsü linki yeni sekmede açılır).
+- `@view-transition { navigation: auto }` denendi ve **kaldırıldı**: Chrome'da ilk boyamayı geciktirip mobil Lighthouse performansını 87'ye düşürüyordu; sitede tek sayfa geçişi (404 → ana sayfa) olduğu için değmez.
+- Lighthouse (yerel, üretim ayarları): mobil ve masaüstü 100/100/100/100, CLS 0.

@@ -25,8 +25,8 @@
 {% include "core/partials/hero.html" %}
 
 <main class="container">
-  <section class="section" aria-labelledby="projects-title">
-    <h2 class="section__title" id="projects-title">{{ site.sections.projects }}</h2>
+  <section class="section" id="projeler" aria-labelledby="projects-title">
+    <h2 class="section__title reveal" id="projects-title"><span class="section__index" aria-hidden="true">01</span>{{ site.sections.projects }}</h2>
     <div class="stack">
       {% for project in site.projects %}
         {% include "core/partials/project_card.html" %}
@@ -34,8 +34,8 @@
     </div>
   </section>
 
-  <section class="section" aria-labelledby="businesses-title">
-    <h2 class="section__title" id="businesses-title">{{ site.sections.businesses }}</h2>
+  <section class="section" id="isletmeler" aria-labelledby="businesses-title">
+    <h2 class="section__title reveal" id="businesses-title"><span class="section__index" aria-hidden="true">02</span>{{ site.sections.businesses }}</h2>
     <div class="grid">
       {% for business in site.businesses %}
         {% include "core/partials/business_card.html" %}

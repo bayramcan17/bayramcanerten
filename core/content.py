@@ -32,6 +32,16 @@ SITE = {
         "projects": "Projeler",
         "businesses": "İşletmelerimiz",
     },
+    # Short interface labels (navigation, buttons, screen-reader text).
+    "ui": {
+        "nav_label": "Bölümler",
+        "home": "Başa dön",
+        "theme_to_dark": "Koyu temaya geç",
+        "theme_to_light": "Açık temaya geç",
+        "scroll_down": "Projelere in",
+        "zoom": "Büyüt",
+        "close": "Kapat",
+    },
     "projects": [
         {
             "name": "Tenis Asistanı",
@@ -50,6 +60,7 @@ SITE = {
                 },
                 {"kind": "soon", "icon": "play", "label": "Google Play — Yakında", "url": None},
             ],
+            "stack": ["SwiftUI", "SwiftData", "watchOS", "Jetpack Compose", "Django"],
             "screenshots": [],
         },
         {
@@ -63,6 +74,7 @@ SITE = {
             "badges": [
                 {"kind": "live", "icon": "live", "label": "Canlıda · Dahili kullanım", "url": None},
             ],
+            "stack": ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "Recharts"],
             "screenshots": [
                 {
                     "src": "core/img/otel-panel-dashboard.webp",

@@ -1,10 +1,11 @@
-<header class="hero">
+<header class="hero" id="top" data-hero>
+  <div class="hero__sky" aria-hidden="true"></div>
   <div class="hero__inner">
-    {% include "core/partials/monogram.html" %}
-    <h1 class="hero__name">{{ site.name }}</h1>
-    <p class="hero__title">{{ site.title }}</p>
-    <p class="hero__school">{{ site.school }}</p>
-    <ul class="socials" role="list">
+    <div class="hero__mark enter" style="--i: 0">{% include "core/partials/monogram.html" %}</div>
+    <h1 class="hero__name">{% for word in site.name.split %}<span class="hero__word enter" style="--i: {{ forloop.counter }}">{{ word }}</span>{% if not forloop.last %} {% endif %}{% endfor %}</h1>
+    <p class="hero__title enter" style="--i: 4">{{ site.title }}</p>
+    <p class="hero__school enter" style="--i: 5">{{ site.school }}</p>
+    <ul class="socials enter" style="--i: 6" role="list">
       {% for social in site.socials %}
         <li>
           <a class="socials__link" href="{{ social.url }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
@@ -14,5 +15,7 @@
       {% endfor %}
     </ul>
   </div>
+  {% include "core/partials/sparkles.html" %}
+  <a class="hero__cue enter" style="--i: 8" href="#projeler" aria-label="{{ site.ui.scroll_down }}"><span></span></a>
   {% include "core/partials/waves.html" %}
 </header>

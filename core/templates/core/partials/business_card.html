@@ -1,5 +1,5 @@
 {% load static %}
-<article class="card card--business">
+<article class="card card--business reveal" data-spotlight data-tilt="3">
   <div class="card__media">
     {% if business.logo %}
       <img src="{% static business.logo.src %}" width="{{ business.logo.width }}" height="{{ business.logo.height }}" alt="{{ business.name }} logosu" loading="lazy">

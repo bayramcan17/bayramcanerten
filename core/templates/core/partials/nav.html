@@ -1,0 +1,17 @@
+<nav class="nav" aria-label="{{ site.ui.nav_label }}">
+  <a class="nav__brand" href="/#top" aria-label="{{ site.ui.home }}">
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="16" class="nav__disc"/><text x="16" y="20.5" text-anchor="middle" class="nav__letter">B</text><path d="M7.5 24.5c1.6-1.2 3.2-1.2 4.8 0s3.2 1.2 4.8 0 3.2-1.2 4.8 0 3.2 1.2 4.8 0" class="nav__wave"/></svg>
+  </a>
+  <ul class="nav__links" role="list">
+    <li><a class="nav__link" href="/#projeler" data-nav="projeler">{{ site.sections.projects }}</a></li>
+    <li><a class="nav__link" href="/#isletmeler" data-nav="isletmeler">{{ site.sections.businesses }}</a></li>
+  </ul>
+  <button class="theme-toggle" type="button" data-theme-toggle data-label-dark="{{ site.ui.theme_to_dark }}" data-label-light="{{ site.ui.theme_to_light }}" aria-label="{{ site.ui.theme_to_dark }}" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <mask id="theme-moon"><rect width="24" height="24" fill="#fff"/><circle class="theme-toggle__cut" cx="24" cy="4" r="7" fill="#000"/></mask>
+      <circle class="theme-toggle__core" cx="12" cy="12" r="5" mask="url(#theme-moon)"/>
+      <g class="theme-toggle__rays"><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g>
+    </svg>
+  </button>
+</nav>
+<div class="progress" aria-hidden="true"></div>

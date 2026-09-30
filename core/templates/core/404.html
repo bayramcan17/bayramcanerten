@@ -5,13 +5,15 @@
 {% block meta %}<meta name="robots" content="noindex">{% endblock %}
 
 {% block content %}
-<main class="hero hero--compact">
+<main class="hero hero--compact" id="top" data-hero>
+  <div class="hero__sky" aria-hidden="true"></div>
   <div class="hero__inner">
-    {% include "core/partials/monogram.html" %}
-    <h1 class="hero__name">Sayfa bulunamadı</h1>
-    <p class="hero__title">Aradığın sayfa burada değil; dalgalar almış olabilir.</p>
-    <p><a class="button" href="/">Ana sayfaya dön</a></p>
+    <div class="hero__mark enter" style="--i: 0">{% include "core/partials/monogram.html" %}</div>
+    <h1 class="hero__name enter" style="--i: 1">Sayfa bulunamadı</h1>
+    <p class="hero__title enter" style="--i: 2">Aradığın sayfa burada değil; dalgalar almış olabilir.</p>
+    <p class="enter" style="--i: 3"><a class="button" href="/">Ana sayfaya dön</a></p>
   </div>
+  {% include "core/partials/sparkles.html" %}
   {% include "core/partials/waves.html" %}
 </main>
 {% endblock %}

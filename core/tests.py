@@ -32,6 +32,35 @@ class PageTests(SimpleTestCase):
         self.assertEqual(html.count('target="_blank"'), html.count('rel="noopener"'))
 
 
+class EnhancementTests(SimpleTestCase):
+    """The page must stay complete without JS; enhancements only hook into it."""
+
+    def html(self):
+        return self.client.get("/", secure=True).content.decode()
+
+    def test_nav_links_point_to_sections(self):
+        html = self.html()
+        for section_id in ("projeler", "isletmeler"):
+            with self.subTest(section_id=section_id):
+                self.assertIn(f'href="/#{section_id}"', html)
+                self.assertIn(f'id="{section_id}"', html)
+
+    def test_theme_toggle_is_hidden_until_js_runs(self):
+        self.assertRegex(self.html(), r"<button[^>]*data-theme-toggle[^>]*\shidden>")
+
+    def test_every_lightbox_link_has_a_dialog(self):
+        html = self.html()
+        targets = re.findall(r'data-lightbox="([^"]+)"', html)
+        self.assertTrue(targets)
+        for target in targets:
+            with self.subTest(target=target):
+                self.assertIn(f'<dialog class="lightbox" id="{target}"', html)
+
+    def test_script_is_a_deferred_module(self):
+        self.assertIn('<script type="module" src="/static/core/js/site.js"></script>', self.html())
+        self.assertIsNotNone(finders.find("core/js/site.js"))
+
+
 class SeoTests(SimpleTestCase):
     def get(self, path):
         return self.client.get(path, secure=True)

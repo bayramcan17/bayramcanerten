@@ -1,5 +1,5 @@
 {% load static %}
-<article class="card">
+<article class="card reveal" data-spotlight data-tilt="{% if project.screenshots %}1.2{% else %}3{% endif %}">
   <div class="card__head">
     {% if project.logo %}
       <img class="card__logo" src="{% static project.logo.src %}" width="{{ project.logo.width }}" height="{{ project.logo.height }}" alt="{{ project.name }} logosu">
@@ -14,12 +14,22 @@
       <li>{% include "core/partials/badge.html" %}</li>
     {% endfor %}
   </ul>
+  {% if project.stack %}
+    <ul class="tags" role="list">
+      {% for tech in project.stack %}<li class="tags__item" style="--i: {{ forloop.counter0 }}">{{ tech }}</li>{% endfor %}
+    </ul>
+  {% endif %}
   {% if project.screenshots %}
     <div class="shots">
       {% for shot in project.screenshots %}
-        <a class="shots__item" href="{% static shot.src %}" target="_blank" rel="noopener">
+        <a class="shots__item" href="{% static shot.src %}" target="_blank" rel="noopener" data-lightbox="shot-{{ forloop.parentloop.counter }}-{{ forloop.counter }}">
           <img src="{% static shot.thumb %}" srcset="{% static shot.thumb %} 800w, {% static shot.src %} {{ shot.width }}w" sizes="(min-width: 40rem) 24rem, calc(100vw - 5rem)" width="{{ shot.width }}" height="{{ shot.height }}" alt="{{ shot.alt }}" loading="lazy">
+          <span class="shots__hint" aria-hidden="true">{% include "core/partials/icon.html" with name="expand" %}{{ site.ui.zoom }}</span>
         </a>
+        <dialog class="lightbox" id="shot-{{ forloop.parentloop.counter }}-{{ forloop.counter }}" aria-label="{{ shot.alt }}">
+          <img src="{% static shot.src %}" width="{{ shot.width }}" height="{{ shot.height }}" alt="{{ shot.alt }}" loading="lazy">
+          <form method="dialog"><button class="lightbox__close" type="submit" aria-label="{{ site.ui.close }}">{% include "core/partials/icon.html" with name="close" %}</button></form>
+        </dialog>
       {% endfor %}
     </div>
   {% endif %}
