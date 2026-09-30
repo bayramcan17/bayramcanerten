@@ -91,4 +91,5 @@ Kullanıcı isteği: site "tek düze", daha canlı ve güncel teknikler. Harici 
 - Proje kartlarına **teknoloji etiketleri** eklendi (projelerin kendi kodundan doğrulandı).
 - Erişilebilirlik: tüm hareketler `prefers-reduced-motion: no-preference` içinde; JS kapalıyken site eksiksiz (tema düğmesi gizli kalır, ekran görüntüsü linki yeni sekmede açılır).
 - `@view-transition { navigation: auto }` denendi ve **kaldırıldı**: Chrome'da ilk boyamayı geciktirip mobil Lighthouse performansını 87'ye düşürüyordu; sitede tek sayfa geçişi (404 → ana sayfa) olduğu için değmez.
+- Hero girişi opacity 0'dan başlamaz (monogram küçükten büyür, isim bulanıktan netleşir); aksi halde en büyük öğe (LCP) geç sayılıyordu.
 - Lighthouse (yerel, üretim ayarları): mobil ve masaüstü 100/100/100/100, CLS 0.

@@ -1108,7 +1108,7 @@ a.badge:hover {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation:
-      enter 0.9s var(--ease-out) both,
+      enter-focus 0.9s var(--ease-out) both,
       glint 7s ease-in-out infinite;
     animation-delay:
       calc(var(--i, 0) * 90ms + 100ms),
@@ -1226,11 +1226,19 @@ a.badge:hover {
   }
 }
 
+/* No opacity here: the monogram and name are the largest content, so they
+   must be painted from the first frame (Largest Contentful Paint). */
 @keyframes enter-pop {
   from {
-    opacity: 0;
     scale: 0.6;
     rotate: -12deg;
+  }
+}
+
+@keyframes enter-focus {
+  from {
+    translate: 0 0.35em;
+    filter: blur(10px);
   }
 }
 
