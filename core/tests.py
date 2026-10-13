@@ -148,6 +148,10 @@ class ClutchlyTests(SimpleTestCase):
         self.assertIn('hreflang="x-default" href="https://bayramcanerten.com/clutchly"', html)
         self.assertIn('<link rel="canonical" href="https://bayramcanerten.com/clutchly?lang=tr">', html)
 
+    def test_bare_url_is_its_own_canonical(self):
+        html = self.get("/clutchly/privacy").content.decode()
+        self.assertIn('<link rel="canonical" href="https://bayramcanerten.com/clutchly/privacy">', html)
+
     def test_trailing_slash_redirects_keep_language(self):
         response = self.get("/clutchly/privacy/?lang=tr")
         self.assertEqual(response.status_code, 301)

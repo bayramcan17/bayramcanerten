@@ -62,7 +62,7 @@ def _page_urls(lang):
     return {key: f"{path}?lang={lang}" for key, path in PAGES.items()}
 
 
-def _context(request, page, lang):
+def _context(request, page, lang, explicit):
     site_url = content.SITE["url"].rstrip("/")
     text = content_clutchly.TEXT[lang]
     other = "en" if lang == "tr" else "tr"
@@ -77,7 +77,8 @@ def _context(request, page, lang):
         "page_text": text[page],
         "urls": _page_urls(lang),
         "email_marker": EMAIL,
-        "canonical": f"{site_url}{path}?lang={lang}",
+        # Each URL is its own canonical: the bare one is the x-default (negotiated) page.
+        "canonical": f"{site_url}{path}?lang={lang}" if explicit else f"{site_url}{path}",
         "alternates": [
             {"hreflang": code, "url": f"{site_url}{path}?lang={code}"}
             for code in content_clutchly.LANGUAGES
@@ -100,8 +101,8 @@ def _context(request, page, lang):
 def clutchly_page(request, page):
     if page not in PAGES:
         raise Http404
-    lang, _explicit = negotiate_language(request)
-    context = _context(request, page, lang)
+    lang, explicit = negotiate_language(request)
+    context = _context(request, page, lang, explicit)
 
     if page == "privacy":
         # Explicit keys: a dict's own `.items` would shadow a missing "items" key in templates.

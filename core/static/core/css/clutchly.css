@@ -975,8 +975,8 @@ main > .c-section:last-child {
       animation-name: reveal-soft;
     }
 
-    /* Screens lift into focus as they cross the middle of the carousel. */
-    .carousel__item {
+    /* Screens lift into focus as they cross the carousel; labels stay fully opaque. */
+    .carousel__item .phone {
       animation: carousel-focus linear both;
       animation-timeline: view(inline);
     }
