@@ -1,0 +1,14 @@
+<nav class="nav nav--clutchly" aria-label="{{ ui.nav_label }}">
+  <a class="nav__product" href="{{ urls.product }}"{% if page == "product" %} aria-current="page"{% endif %}>
+    {% include "core/clutchly/app_icon.html" with size="nav" %}<span class="nav__product-name">{{ t.nav.product }}</span>
+  </a>
+  <ul class="nav__links" role="list">
+    <li><a class="nav__link" href="{{ urls.privacy }}"{% if page == "privacy" %} aria-current="page"{% endif %}>{{ t.nav.privacy }}</a></li>
+    <li><a class="nav__link" href="{{ urls.support }}"{% if page == "support" %} aria-current="page"{% endif %}>{{ t.nav.support }}</a></li>
+  </ul>
+  <div class="lang-switch" role="group" aria-label="{{ ui.language_label }}">
+    {% for language in languages %}<a class="lang-switch__option" href="{{ language.url }}" hreflang="{{ language.code }}" lang="{{ language.code }}" title="{{ language.name }}"{% if language.current %} aria-current="true"{% endif %}>{{ language.code|upper }}</a>{% endfor %}
+  </div>
+  {% include "core/partials/theme_toggle.html" with ui=ui %}
+</nav>
+<div class="progress" aria-hidden="true"></div>

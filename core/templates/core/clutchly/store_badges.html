@@ -1,0 +1,14 @@
+<div class="store-badges">
+  {% if app.app_store.live %}
+    <a class="store-badge" href="{{ app.app_store.url }}" target="_blank" rel="noopener">
+      {% include "core/partials/icon.html" with name="appstore" %}<span><small>{{ ui.download_on }}</small>{{ ui.app_store }}</span>
+    </a>
+  {% else %}
+    <span class="store-badge store-badge--soon">
+      {% include "core/partials/icon.html" with name="appstore" %}<span><small>{{ ui.coming_soon }}</small>{{ ui.app_store }}</span>
+    </span>
+  {% endif %}
+  <span class="store-badge store-badge--soon">
+    {% include "core/partials/icon.html" with name="play" %}<span><small>{{ ui.coming_soon }}</small>{{ ui.google_play }}</span>
+  </span>
+</div>

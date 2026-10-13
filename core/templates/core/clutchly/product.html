@@ -1,0 +1,85 @@
+{% extends "core/clutchly/base.html" %}
+{% load static %}
+
+{% block extra_meta %}<script type="application/ld+json">{{ json_ld }}</script>{% endblock %}
+
+{% block content %}
+<header class="c-hero" id="top" data-hero>
+  <div class="hero__sky c-hero__sky" aria-hidden="true"></div>
+  <svg class="c-hero__court" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+    <path d="M140 300V170a460 460 0 0 1 920 0v130"/>
+    <path d="M460 300V160h280v140"/>
+    <circle cx="600" cy="160" r="90"/>
+  </svg>
+  <div class="c-hero__inner">
+    <div class="c-hero__copy">
+      <p class="c-eyebrow enter" style="--i: 0">{% include "core/clutchly/app_icon.html" with size="eyebrow" %}{{ app.name }}</p>
+      <h1 class="c-hero__title enter" style="--i: 1">{{ page_text.headline }}</h1>
+      <p class="c-hero__sub enter" style="--i: 2">{{ page_text.subhead }}</p>
+      <div class="enter" style="--i: 3">{% include "core/clutchly/store_badges.html" %}</div>
+    </div>
+    <div class="c-hero__device enter" style="--i: 2">
+      <div class="phone phone--hero">
+        <img src="{% static hero.medium %}" srcset="{% static hero.small %} 400w, {% static hero.medium %} 800w" sizes="(min-width: 56rem) 18rem, 15rem" width="{{ app.screen_size.width }}" height="{{ app.screen_size.height }}" alt="{{ ui.screen_alt }} {{ screens.0.label }}" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="c-section container" id="features" aria-labelledby="features-title">
+    <h2 class="c-section__title reveal" id="features-title">{{ page_text.features_title }}</h2>
+    <ul class="features" role="list">
+      {% for feature in page_text.features %}
+        <li class="card feature reveal" data-spotlight data-tilt="4">
+          <span class="feature__icon">{% include "core/partials/icon.html" with name=feature.icon %}</span>
+          <h3 class="feature__title">{{ feature.title }}</h3>
+          <p class="feature__text">{{ feature.text }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="c-section c-section--wide" id="screens" aria-labelledby="screens-title">
+    <div class="container">
+      <h2 class="c-section__title reveal" id="screens-title">{{ page_text.screens_title }}</h2>
+    </div>
+    <div class="carousel" data-carousel>
+      <button class="carousel__button carousel__button--prev" type="button" data-carousel-prev aria-label="{{ ui.previous }}" hidden>{% include "core/partials/icon.html" with name="chevron-left" %}</button>
+      <ul class="carousel__track" role="list" tabindex="0" aria-labelledby="screens-title" data-carousel-track>
+        {% for screen in screens %}
+          <li class="carousel__item">
+            <a class="phone phone--small" href="{% static screen.full %}" target="_blank" rel="noopener" data-lightbox="screen-{{ forloop.counter }}">
+              <img src="{% static screen.medium %}" srcset="{% static screen.small %} 400w, {% static screen.medium %} 800w" sizes="14rem" width="{{ app.screen_size.width }}" height="{{ app.screen_size.height }}" alt="{{ ui.screen_alt }} {{ screen.label }}" loading="lazy">
+            </a>
+            <dialog class="lightbox lightbox--tall" id="screen-{{ forloop.counter }}" aria-label="{{ screen.label }}">
+              <img src="{% static screen.full %}" width="{{ app.screen_size.width }}" height="{{ app.screen_size.height }}" alt="{{ ui.screen_alt }} {{ screen.label }}" loading="lazy">
+              <form method="dialog"><button class="lightbox__close" type="submit" aria-label="{{ ui.close }}">{% include "core/partials/icon.html" with name="close" %}</button></form>
+            </dialog>
+            <p class="carousel__label">{{ screen.label }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+      <button class="carousel__button carousel__button--next" type="button" data-carousel-next aria-label="{{ ui.next }}" hidden>{% include "core/partials/icon.html" with name="chevron-right" %}</button>
+    </div>
+  </section>
+
+  <section class="c-section container" id="plans" aria-labelledby="plans-title">
+    <h2 class="c-section__title reveal" id="plans-title">{{ page_text.plans_title }}</h2>
+    <div class="plans">
+      {% for plan in page_text.plans %}
+        <article class="card plan{% if forloop.last %} plan--pro{% endif %} reveal" data-spotlight data-tilt="2">
+          <h3 class="plan__name">{% if forloop.last %}{% include "core/clutchly/app_icon.html" with size="plan" %}{% endif %}{{ plan.name }}</h3>
+          <ul class="plan__list" role="list">
+            {% for item in plan.items %}
+              <li>{% include "core/partials/icon.html" with name="check" %}<span>{{ item|capfirst }}</span></li>
+            {% endfor %}
+          </ul>
+          {% if plan.note %}<p class="plan__note">{{ plan.note }}</p>{% endif %}
+        </article>
+      {% endfor %}
+    </div>
+    <div class="c-cta reveal">{% include "core/clutchly/store_badges.html" %}</div>
+  </section>
+</main>
+{% endblock %}

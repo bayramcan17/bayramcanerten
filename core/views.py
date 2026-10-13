@@ -3,7 +3,7 @@ import json
 from django.shortcuts import render
 from django.utils.safestring import mark_safe
 
-from . import content
+from . import clutchly, content
 
 # Escape characters that could close the <script> tag early.
 _JSON_ESCAPES = {ord("<"): "\\u003C", ord(">"): "\\u003E", ord("&"): "\\u0026"}
@@ -37,7 +37,12 @@ def robots_txt(request):
 
 
 def sitemap_xml(request):
-    return render(request, "core/sitemap.xml", {"site": content.SITE}, content_type="application/xml")
+    return render(
+        request,
+        "core/sitemap.xml",
+        {"site": content.SITE, "clutchly_entries": clutchly.sitemap_entries()},
+        content_type="application/xml",
+    )
 
 
 def page_not_found(request, exception):

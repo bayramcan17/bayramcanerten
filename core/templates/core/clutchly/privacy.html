@@ -1,0 +1,39 @@
+{% extends "core/clutchly/base.html" %}
+
+{% block content %}
+<main class="doc">
+  <header class="doc__hero">
+    <div class="container">
+      <p class="c-eyebrow enter" style="--i: 0">{% include "core/clutchly/app_icon.html" with size="eyebrow" %}{{ app.name }}</p>
+      <h1 class="doc__title enter" style="--i: 1">{{ page_text.title }}</h1>
+      <p class="doc__updated enter" style="--i: 2"><time datetime="2026-10-12">{{ page_text.updated }}</time></p>
+    </div>
+  </header>
+
+  <div class="container doc__layout">
+    <nav class="toc" aria-labelledby="toc-title">
+      <p class="toc__title" id="toc-title">{{ ui.contents }}</p>
+      <ol class="toc__list">
+        {% for section in sections %}<li><a href="#{{ section.id }}">{{ section.title }}</a></li>{% endfor %}
+      </ol>
+    </nav>
+
+    <article class="doc__body">
+      {% for section in sections %}
+        <section class="doc__section reveal" id="{{ section.id }}" aria-labelledby="{{ section.id }}-title">
+          <h2 id="{{ section.id }}-title"><span class="doc__index" aria-hidden="true">{{ forloop.counter|stringformat:"02d" }}</span>{{ section.title }}</h2>
+          {% for paragraph in section.paragraphs %}
+            <p>{% for part in paragraph %}{% if part == email_marker %}<a href="mailto:{{ app.email }}">{{ app.email }}</a>{% else %}{{ part }}{% endif %}{% endfor %}</p>
+          {% endfor %}
+          {% if section.entries %}
+            <ul class="doc__list">
+              {% for label, text in section.entries %}<li>{% if label %}<strong>{{ label }}</strong>: {% endif %}{{ text }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+        </section>
+      {% endfor %}
+      <p class="doc__note">{{ t.not_affiliated }}</p>
+    </article>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "core/clutchly/base.html" %}
+
+{% block content %}
+<main class="doc">
+  <header class="doc__hero">
+    <div class="container">
+      <p class="c-eyebrow enter" style="--i: 0">{% include "core/clutchly/app_icon.html" with size="eyebrow" %}{{ app.name }}</p>
+      <h1 class="doc__title enter" style="--i: 1">{{ page_text.title }}</h1>
+    </div>
+  </header>
+
+  <div class="container doc__narrow">
+    <section class="card contact reveal" data-spotlight data-tilt="1.5" aria-label="{{ ui.write_to_me }}">
+      <span class="contact__icon">{% include "core/partials/icon.html" with name="mail" %}</span>
+      <p class="contact__intro">{% for part in intro %}{% if part == email_marker %}<strong><a href="mailto:{{ app.email }}?subject=Clutchly">{{ app.email }}</a></strong>{% else %}{{ part }}{% endif %}{% endfor %}</p>
+      <a class="button contact__button" href="mailto:{{ app.email }}?subject=Clutchly">{% include "core/partials/icon.html" with name="mail" %}{{ ui.write_to_me }}</a>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 class="c-section__title reveal" id="faq-title">{{ ui.faq_title }}</h2>
+      {% for question, answer in page_text.faq %}
+        <details class="faq__item reveal" name="faq">
+          <summary>{{ question }}{% include "core/partials/icon.html" with name="chevron" %}</summary>
+          <div class="faq__answer"><p>{{ answer }}</p></div>
+        </details>
+      {% endfor %}
+    </section>
+
+    <p class="doc__note"><a href="{{ urls.privacy }}">{{ ui.privacy_link }}</a> · {{ t.not_affiliated }}</p>
+  </div>
+</main>
+{% endblock %}

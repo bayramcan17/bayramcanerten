@@ -185,3 +185,34 @@ if (sections.length && "IntersectionObserver" in window) {
   );
   sections.forEach((section) => observer.observe(section));
 }
+
+// ---------------------------------------------------------------------------
+// Carousel arrows (the track itself scrolls and snaps with plain CSS).
+// ---------------------------------------------------------------------------
+
+for (const carousel of document.querySelectorAll("[data-carousel]")) {
+  const track = carousel.querySelector("[data-carousel-track]");
+  const prev = carousel.querySelector("[data-carousel-prev]");
+  const next = carousel.querySelector("[data-carousel-next]");
+  if (!track || !prev || !next) continue;
+
+  const step = () => {
+    const item = track.querySelector("li");
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    return item ? (item.getBoundingClientRect().width + gap) * 2 : track.clientWidth * 0.8;
+  };
+  const scroll = (direction) =>
+    track.scrollBy({ left: direction * step(), behavior: reducedMotion.matches ? "auto" : "smooth" });
+  const update = () => {
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+  };
+
+  prev.addEventListener("click", () => scroll(-1));
+  next.addEventListener("click", () => scroll(1));
+  track.addEventListener("scroll", update, { passive: true });
+  addEventListener("resize", update);
+  update();
+  prev.hidden = false;
+  next.hidden = false;
+}

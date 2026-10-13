@@ -93,3 +93,14 @@ Kullanıcı isteği: site "tek düze", daha canlı ve güncel teknikler. Harici 
 - `@view-transition { navigation: auto }` denendi ve **kaldırıldı**: Chrome'da ilk boyamayı geciktirip mobil Lighthouse performansını 87'ye düşürüyordu; sitede tek sayfa geçişi (404 → ana sayfa) olduğu için değmez.
 - Hero girişi opacity 0'dan başlamaz (monogram küçükten büyür, isim bulanıktan netleşir); aksi halde en büyük öğe (LCP) geç sayılıyordu.
 - Lighthouse (yerel, üretim ayarları): mobil ve masaüstü 100/100/100/100, CLS 0.
+
+## Clutchly sayfaları — 2026-10-13
+
+- `/clutchly`, `/clutchly/privacy`, `/clutchly/support` eklendi (App Store gizlilik/destek/pazarlama adresleri). Metinler `Clutchly/docs/web/clutchly-site.md` belgesinden birebir; bir betikle tüm metinlerin belgeyle aynı olduğu doğrulandı.
+- **Dil:** sitede i18n yoktu; adresler sabit kalsın diye `?lang=tr|en`, yoksa `Accept-Language`, yoksa İngilizce. Görünür TR/EN düğmesi, `hreflang` alternatifleri, `Vary: Accept-Language`. Çerez yok.
+- **Üçüncü taraf yok:** bu sayfalarda Google Fonts yüklenmez (sistem fontu, iOS uygulamasıyla da uyumlu); analiz/takip betiği yok. Testle korunuyor.
+- **Görünüm:** sitenin bileşenleri, uygulamanın kimliğiyle (gece moru + turuncu). Telefon çerçevesinde ekran görüntüleri, kaydırmalı galeri, Ücretsiz/Pro kartları, gizlilikte içindekiler, destekte açılır SSS.
+- **App Store:** henüz yayında değil (id6821973888 → 404); rozet "Yakında / Coming soon". `COMMON["app_store"]["live"]` ile açılır.
+- NBA/takım logosu ve oyuncu fotoğrafı yok (App Store 5.2.1); ekran görüntüleri kontrol edildi, yalnızca kısaltmalar ve baş harfler var.
+- Logo henüz yok; "C" harfli geçici ikon.
+- Belge sayfalarında (gizlilik, destek) belirme animasyonu saydamlık kullanmaz: metin her an tam okunur kalır.

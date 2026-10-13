@@ -4,6 +4,9 @@ _Eksik bilgi yok. Aşağıdakiler isteğe bağlı, ileride düşünülebilecek i
 
 ## Bekleyen
 
+- [ ] **Clutchly logosu** — kullanıcı gönderecek; README → "Clutchly sayfaları → Logo gelince".
+- [ ] **Clutchly App Store'a çıkınca** `COMMON["app_store"]["live"] = True` ve ana sayfa rozeti (README).
+
 - [ ] **Google Play yayınlanınca** Tenis Asistanı rozetini güncelle (README → "Google Play yayınlanınca").
 
 ## İsteğe bağlı

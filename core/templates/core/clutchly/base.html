@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}{{ page_text.title }}{% endblock %}
+{% block description %}{{ page_text.description }}{% endblock %}
+
+{% block theme_color %}<meta name="theme-color" content="#140f2b">{% endblock %}
+
+{# System fonts only: these pages make no third-party requests. #}
+{% block fonts %}{% endblock %}
+
+{% block styles %}<link rel="stylesheet" href="{% static 'core/css/clutchly.css' %}">{% endblock %}
+
+{% block body_attrs %} class="clutchly"{% endblock %}
+
+{% block meta %}
+  <link rel="canonical" href="{{ canonical }}">
+  {% for alternate in alternates %}<link rel="alternate" hreflang="{{ alternate.hreflang }}" href="{{ alternate.url }}">
+  {% endfor %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ app.name }}">
+  <meta property="og:locale" content="{{ t.locale }}">
+  <meta property="og:locale:alternate" content="{{ other_locale }}">
+  <meta property="og:title" content="{{ page_text.title }}">
+  <meta property="og:description" content="{{ page_text.description }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ t.product.title }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_text.title }}">
+  <meta name="twitter:description" content="{{ page_text.description }}">
+  <meta name="twitter:image" content="{{ og_image }}">
+  {% block extra_meta %}{% endblock %}
+{% endblock %}
+
+{% block nav %}{% include "core/clutchly/nav.html" %}{% endblock %}
+{% block footer %}{% include "core/clutchly/footer.html" %}{% endblock %}

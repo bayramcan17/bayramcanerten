@@ -44,12 +44,32 @@ SITE = {
     },
     "projects": [
         {
+            "name": "Clutchly",
+            "summary": (
+                "NBA'i uykundan olmadan takip et. Gece maçlarını Türkiye saatiyle gösterir, maç "
+                "çekişmeli bitecekse seni uyandırır, sabah skoru söylemeden hangi maçın izlemeye "
+                "değer olduğunu anlatır."
+            ),
+            # Placeholder tile until the logo arrives; then use "logo": {"src": ..., ...}.
+            "logo": None,
+            "logo_text": "C",
+            "logo_style": "clutchly",
+            "badges": [
+                {"kind": "web", "icon": "arrow", "label": "Ürün sayfası", "url": "/clutchly"},
+                {"kind": "soon", "icon": "appstore", "label": "App Store — Yakında", "url": None},
+                {"kind": "soon", "icon": "play", "label": "Google Play — Yakında", "url": None},
+            ],
+            "stack": ["SwiftUI", "AlarmKit", "ActivityKit", "WidgetKit", "Supabase", "RevenueCat"],
+            "screenshots": [],
+        },
+        {
             "name": "Tenis Asistanı",
             "summary": (
                 "Kortta canlı skor tutan, antrenmanları ve ekipman ömrünü "
                 "takip eden tenis uygulaması. Apple Watch ile bilekten skor."
             ),
             "logo": {"src": "core/img/tenis-asistani.webp", "width": 168, "height": 168},
+            "logo_text": None,
             "badges": [
                 {"kind": "web", "icon": "web", "label": "Web", "url": "https://tenisasistani.com"},
                 {
@@ -71,6 +91,7 @@ SITE = {
                 "canlıda, aktif olarak kullanılıyor."
             ),
             "logo": None,
+            "logo_text": None,
             "badges": [
                 {"kind": "live", "icon": "live", "label": "Canlıda · Dahili kullanım", "url": None},
             ],

@@ -149,6 +149,16 @@ git push
 | `SECRET_KEY` | Üretimde zorunlu. Vercel → Project → Settings → Environment Variables (Production ve Preview'da tanımlı) |
 | `DEBUG` | `True` yalnızca yerelde. Varsayılan `False` |
 
+## Clutchly sayfaları
+
+`/clutchly`, `/clutchly/privacy`, `/clutchly/support` — App Store Connect'te gizlilik, destek ve pazarlama adresi olarak kullanılıyor; **adresleri değiştirme**.
+
+- **Metinler:** `core/content_clutchly.py` (Türkçe ve İngilizce). Kaynak: `~/Desktop/Clutchly/docs/web/clutchly-site.md`. Gizlilik politikası uygulamadakiyle aynı olmalı; değişirse önce o belgeyi güncelle.
+- **Dil:** `?lang=tr` / `?lang=en`; parametre yoksa tarayıcının diline bakılır, o da yoksa İngilizce. Çerez kullanılmaz. Sayfalarda Google Fonts dahil hiçbir üçüncü taraf istek yoktur (sistem fontu).
+- **App Store yayına girince:** `content_clutchly.py` → `COMMON["app_store"]["live"] = True`. Rozet "Yakında" yerine App Store linkine dönüşür. Ana sayfadaki proje kartında da "App Store — Yakında" rozetini `{"kind": "appstore", "icon": "appstore", "label": "App Store", "url": "https://apps.apple.com/app/id6821973888"}` yap.
+- **Logo gelince:** şimdilik "C" harfli geçici bir ikon var (`core/templates/core/clutchly/app_icon.html` ve ana sayfa kartında `logo_text`). Logoyu `core/static/core/img/clutchly/` altına koyup bu iki yeri güncelle.
+- **Ekran görüntüleri:** `core/static/core/img/clutchly/<dil>/<ad>-400|800|full.webp`. Yenilemek için App Store ham görüntülerini (1320×2868) aynı adlarla bu üç boyutta WebP'ye çevir.
+
 ## Animasyonlar
 
 Tüm efektler `core/static/core/css/site.css` (sonundaki "Motion" bölümü) ve `core/static/core/js/site.js` içindedir; harici kütüphane yoktur.
