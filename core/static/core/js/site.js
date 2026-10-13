@@ -44,12 +44,13 @@ if (toggle) {
 
     root.classList.add("theme-switching");
     const transition = document.startViewTransition(() => applyTheme(next));
+    // `ready` rejects if the transition is skipped (e.g. a fast second click); that's fine.
     transition.ready.then(() => {
       root.animate(
         { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
         { duration: 650, easing: "cubic-bezier(0.22, 1, 0.36, 1)", pseudoElement: "::view-transition-new(root)" },
       );
-    });
+    }, () => {});
     transition.finished.finally(() => root.classList.remove("theme-switching"));
   });
 
@@ -117,6 +118,7 @@ const morph = (from, to, update, dialog) => {
     to.style.viewTransitionName = "shot";
     update();
   });
+  transition.ready.catch(() => {});
   transition.finished.finally(() => {
     to.style.viewTransitionName = "";
     dialog.classList.remove("lightbox--vt");

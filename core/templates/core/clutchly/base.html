@@ -6,6 +6,11 @@
 
 {% block theme_color %}<meta name="theme-color" content="#140f2b">{% endblock %}
 
+{% block icons %}
+  <link rel="icon" href="{% static 'core/img/clutchly/favicon-32.png' %}" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="{% static 'core/img/clutchly/apple-touch-icon.png' %}">
+{% endblock %}
+
 {# System fonts only: these pages make no third-party requests. #}
 {% block fonts %}{% endblock %}
 

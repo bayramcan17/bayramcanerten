@@ -50,10 +50,8 @@ SITE = {
                 "çekişmeli bitecekse seni uyandırır, sabah skoru söylemeden hangi maçın izlemeye "
                 "değer olduğunu anlatır."
             ),
-            # Placeholder tile until the logo arrives; then use "logo": {"src": ..., ...}.
-            "logo": None,
-            "logo_text": "C",
-            "logo_style": "clutchly",
+            "logo": {"src": "core/img/clutchly/icon-192.webp", "width": 192, "height": 192},
+            "logo_text": None,
             "badges": [
                 {"kind": "web", "icon": "arrow", "label": "Ürün sayfası", "url": "/clutchly"},
                 {"kind": "soon", "icon": "appstore", "label": "App Store — Yakında", "url": None},

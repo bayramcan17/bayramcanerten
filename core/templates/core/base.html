@@ -14,10 +14,12 @@
   {% endblock %}
   {% block meta %}{% endblock %}
 
+  {% block icons %}
   <link rel="icon" href="{% static 'core/favicon/favicon.svg' %}" type="image/svg+xml">
   <link rel="icon" href="{% static 'core/favicon/favicon-32.png' %}" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="{% static 'core/favicon/apple-touch-icon.png' %}">
   <link rel="manifest" href="{% static 'core/favicon/site.webmanifest' %}">
+  {% endblock %}
 
   {% block fonts %}
   <link rel="preconnect" href="https://fonts.googleapis.com">

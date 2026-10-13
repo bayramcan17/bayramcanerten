@@ -198,6 +198,8 @@ class ClutchlyTests(SimpleTestCase):
                         self.assertIsNotNone(finders.find(path))
         for lang in content_clutchly.LANGUAGES:
             self.assertIsNotNone(finders.find(f"core/img/clutchly/og-{lang}.jpg"))
+        for name in ("icon-96.webp", "icon-192.webp", "icon-384.webp", "favicon-32.png", "apple-touch-icon.png"):
+            self.assertIsNotNone(finders.find(f"core/img/clutchly/{name}"))
 
     def test_sitemap_lists_clutchly_pages(self):
         xml = self.get("/sitemap.xml").content.decode()

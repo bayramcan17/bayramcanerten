@@ -104,3 +104,4 @@ Kullanıcı isteği: site "tek düze", daha canlı ve güncel teknikler. Harici 
 - NBA/takım logosu ve oyuncu fotoğrafı yok (App Store 5.2.1); ekran görüntüleri kontrol edildi, yalnızca kısaltmalar ve baş harfler var.
 - Logo henüz yok; "C" harfli geçici ikon.
 - Belge sayfalarında (gizlilik, destek) belirme animasyonu saydamlık kullanmaz: metin her an tam okunur kalır.
+- **Logo (2026-10-13):** kullanıcının gönderdiği 1254 px ikon kaynak alındı; görselin tamamı kullanılıyor ve iOS gibi %22,5 köşe yuvarlaklığıyla gösteriliyor (iPhone'daki görünümün aynısı). Clutchly sayfalarının favicon'u ve ana ekran ikonu da bu logo.

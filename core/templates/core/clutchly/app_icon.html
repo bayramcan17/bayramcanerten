@@ -1,2 +1,1 @@
-{# Placeholder app icon until the real Clutchly logo arrives. #}
-<span class="app-icon{% if size %} app-icon--{{ size }}{% endif %}" aria-hidden="true"><span>C</span></span>
+{% load static %}<img class="app-icon{% if size %} app-icon--{{ size }}{% endif %}" src="{% static 'core/img/clutchly/icon-192.webp' %}" srcset="{% static 'core/img/clutchly/icon-96.webp' %} 96w, {% static 'core/img/clutchly/icon-192.webp' %} 192w, {% static 'core/img/clutchly/icon-384.webp' %} 384w" sizes="{% if size == 'hero' %}6rem{% else %}2rem{% endif %}" width="192" height="192" alt=""{% if size != "hero" %} loading="lazy"{% endif %}>

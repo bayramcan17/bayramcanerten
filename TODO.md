@@ -4,7 +4,6 @@ _Eksik bilgi yok. Aşağıdakiler isteğe bağlı, ileride düşünülebilecek i
 
 ## Bekleyen
 
-- [ ] **Clutchly logosu** — kullanıcı gönderecek; README → "Clutchly sayfaları → Logo gelince".
 - [ ] **Clutchly App Store'a çıkınca** `COMMON["app_store"]["live"] = True` ve ana sayfa rozeti (README).
 
 - [ ] **Google Play yayınlanınca** Tenis Asistanı rozetini güncelle (README → "Google Play yayınlanınca").
@@ -17,6 +16,8 @@ _Eksik bilgi yok. Aşağıdakiler isteğe bağlı, ileride düşünülebilecek i
 - [ ] Blog/notlar sayfası, İngilizce sürüm, Tenis Asistanı tanıtım sayfası, /now sayfası (PLAN.md Faz 8).
 
 ## Tamamlananlar
+
+- [x] Clutchly logosu (2026-10-13): ürün sayfası, menü, Pro kartı, ana sayfa kartı, favicon ve paylaşım görselleri.
 
 - [x] otel-panel ekran görüntüleri (2026-09-26): tarayıcı çubuğu ve panel adresi kırpıldı; tutarlar, firma adları ve açıklamalar (personel adları) bulanıklaştırıldı.
 - [x] Erten Yapı Market logosu: yok, isim ve ikonla gösteriliyor.
