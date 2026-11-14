@@ -148,6 +148,13 @@ class ClutchlyTests(SimpleTestCase):
         self.assertIn('hreflang="x-default" href="https://bayramcanerten.com/clutchly"', html)
         self.assertIn('<link rel="canonical" href="https://bayramcanerten.com/clutchly?lang=tr">', html)
 
+    def test_every_page_links_back_to_projects(self):
+        for path in self.PATHS:
+            for lang, label in (("tr", "Projeler"), ("en", "Projects")):
+                with self.subTest(path=path, lang=lang):
+                    html = self.get(f"{path}?lang={lang}").content.decode()
+                    self.assertRegex(html, r'<a class="nav__back" href="/#projeler">[\s\S]*?' + label + "</span>")
+
     def test_bare_url_is_its_own_canonical(self):
         html = self.get("/clutchly/privacy").content.decode()
         self.assertIn('<link rel="canonical" href="https://bayramcanerten.com/clutchly/privacy">', html)

@@ -35,6 +35,7 @@ TEXT = {
         "ui": {
             "nav_label": "Clutchly sayfaları",
             "home": "Bayram Can Erten — ana sayfa",
+            "back": "Projeler",
             "theme_to_dark": "Koyu temaya geç",
             "theme_to_light": "Açık temaya geç",
             "language_label": "Dil",
@@ -277,6 +278,7 @@ TEXT = {
         "ui": {
             "nav_label": "Clutchly pages",
             "home": "Bayram Can Erten — home",
+            "back": "Projects",
             "theme_to_dark": "Switch to dark theme",
             "theme_to_light": "Switch to light theme",
             "language_label": "Language",
