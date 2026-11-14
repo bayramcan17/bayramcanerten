@@ -95,6 +95,7 @@ def _context(request, page, lang, explicit):
         ],
         "other_locale": content_clutchly.TEXT[other]["locale"],
         "og_image": f"{site_url}/static/core/img/clutchly/og-{lang}.jpg",
+        "app_store_url": content_clutchly.COMMON["app_store"]["urls"][lang],
     }
 
 
@@ -156,7 +157,7 @@ def _software_json_ld(lang, url):
     }
     app_store = content_clutchly.COMMON["app_store"]
     if app_store["live"]:
-        data["installUrl"] = app_store["url"]
+        data["installUrl"] = app_store["urls"][lang]
     return mark_safe(json.dumps(data, ensure_ascii=False).translate(_JSON_ESCAPES))
 
 

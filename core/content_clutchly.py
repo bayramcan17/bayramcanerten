@@ -11,9 +11,17 @@ COMMON = {
     "name": "Clutchly",
     "email": "bayrammcan17@gmail.com",
     "controller": "Bayram Can Erten",
-    # Live on the App Store since November 2026; the badge links here.
-    # The region-free URL forwards each visitor to their own storefront.
-    "app_store": {"live": True, "id": "6821973888", "url": "https://apps.apple.com/app/id6821973888"},
+    # Live on the App Store since November 2026. Links name the storefront and the
+    # page language explicitly (the bare /app/id… URL let Apple pick, often English):
+    # Turkish pages open the Turkish store in Turkish, English pages the US store.
+    "app_store": {
+        "live": True,
+        "id": "6821973888",
+        "urls": {
+            "tr": "https://apps.apple.com/tr/app/id6821973888?l=tr",
+            "en": "https://apps.apple.com/us/app/id6821973888",
+        },
+    },
     "stack": ["SwiftUI", "AlarmKit", "ActivityKit", "WidgetKit", "Supabase", "RevenueCat"],
     # Raw captures are 1320×2868; WebP copies live in core/static/core/img/clutchly/<lang>/.
     "screen_size": {"width": 1320, "height": 2868},

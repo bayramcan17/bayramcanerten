@@ -58,7 +58,8 @@ SITE = {
                     "kind": "appstore",
                     "icon": "appstore",
                     "label": "App Store",
-                    "url": "https://apps.apple.com/app/id6821973888",
+                    # The home page is Turkish: open the Turkish store in Turkish.
+                    "url": "https://apps.apple.com/tr/app/id6821973888?l=tr",
                 },
                 {"kind": "soon", "icon": "play", "label": "Google Play — Yakında", "url": None},
             ],
@@ -79,7 +80,7 @@ SITE = {
                     "kind": "appstore",
                     "icon": "appstore",
                     "label": "App Store",
-                    "url": "https://apps.apple.com/us/app/tenis-asistan%C4%B1/id6791199819",
+                    "url": "https://apps.apple.com/tr/app/id6791199819?l=tr",
                 },
                 {"kind": "soon", "icon": "play", "label": "Google Play — Yakında", "url": None},
             ],

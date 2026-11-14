@@ -95,6 +95,10 @@ Sitedeki **tüm** metinler ve linkler `core/content.py` dosyasındadır. Şablon
 },
 ```
 
+### App Store linkleri
+
+Ana sayfa Türkçe olduğu için App Store linklerinde ülke ve dil açıkça yazılır: `https://apps.apple.com/tr/app/id<uygulama-id>?l=tr`. Ülkesiz `/app/id…` linkini Apple bazen İngilizce mağazada açar; `/tr/` tek başına da web'de İngilizce gösterir, Türkçe için `?l=tr` gerekir.
+
 ### Google Play yayınlanınca (Tenis Asistanı)
 
 `core/content.py` içinde Tenis Asistanı'nın rozetlerinde şu satırı:
@@ -155,7 +159,7 @@ git push
 
 - **Metinler:** `core/content_clutchly.py` (Türkçe ve İngilizce). Kaynak: `~/Desktop/Clutchly/docs/web/clutchly-site.md`. Gizlilik politikası uygulamadakiyle aynı olmalı; değişirse önce o belgeyi güncelle.
 - **Dil:** `?lang=tr` / `?lang=en`; parametre yoksa tarayıcının diline bakılır, o da yoksa İngilizce. Çerez kullanılmaz. Sayfalarda Google Fonts dahil hiçbir üçüncü taraf istek yoktur (sistem fontu).
-- **App Store:** Kasım 2026'dan beri yayında (`COMMON["app_store"]["live"] = True`). Rozetler `https://apps.apple.com/app/id6821973888` adresine bağlanıyor (ziyaretçiyi kendi ülkesinin mağazasına yönlendirir); Clutchly sayfalarında Safari'nin "Aç / Al" şeridi (`apple-itunes-app`) çıkıyor. `live` değeri `False` yapılırsa rozetler yeniden "Yakında" olur.
+- **App Store:** Kasım 2026'dan beri yayında (`COMMON["app_store"]["live"] = True`). Rozetler sayfanın diline göre bağlanır: Türkçe → `https://apps.apple.com/tr/app/id6821973888?l=tr` (Türkiye mağazası, Türkçe), İngilizce → `https://apps.apple.com/us/app/id6821973888`; Clutchly sayfalarında Safari'nin "Aç / Al" şeridi (`apple-itunes-app`) çıkıyor. `live` değeri `False` yapılırsa rozetler yeniden "Yakında" olur.
 - **Logo:** `core/static/core/img/clutchly/icon-96|192|384.webp`, `favicon-32.png`, `apple-touch-icon.png` (1254 px kaynaktan üretildi). Logo değişirse bu dosyaları aynı adlarla yeniden üret; paylaşım görselleri (`og-tr.jpg`, `og-en.jpg`) da logoyu içerir.
 - **Ekran görüntüleri:** `core/static/core/img/clutchly/<dil>/<ad>-400|800|full.webp`. Yenilemek için App Store ham görüntülerini (1320×2868) aynı adlarla bu üç boyutta WebP'ye çevir.
 

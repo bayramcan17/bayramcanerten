@@ -192,10 +192,13 @@ class ClutchlyTests(SimpleTestCase):
         html = self.get("/clutchly?lang=en").content.decode()
         app_store = content_clutchly.COMMON["app_store"]
         if app_store["live"]:
-            self.assertIn(f'<a class="store-badge" href="{app_store["url"]}" target="_blank" rel="noopener">', html)
+            self.assertIn(f'<a class="store-badge" href="{app_store["urls"]["en"]}" target="_blank" rel="noopener">', html)
             self.assertIn(f'<meta name="apple-itunes-app" content="app-id={app_store["id"]}">', html)
+            turkish = self.get("/clutchly?lang=tr").content.decode()
+            self.assertIn(f'<a class="store-badge" href="{app_store["urls"]["tr"]}" target="_blank" rel="noopener">', turkish)
+            self.assertIn("apps.apple.com/tr/app/id6821973888?l=tr", app_store["urls"]["tr"])
             home = self.get("/").content.decode()
-            self.assertIn(f'href="{app_store["url"]}"', home)
+            self.assertIn(f'href="{app_store["urls"]["tr"]}"', home)
         else:
             self.assertIn("Coming soon", html)
             self.assertNotIn(content_clutchly.COMMON["app_store"]["url"], html)
