@@ -1,5 +1,6 @@
-/* Clutchly pages: the site's components in the app's night-purple and orange.
- * Loaded after site.css, only on /clutchly pages.
+/* App pages (Clutchly, Orbit Shift): the site's components around a dark product hero.
+ * Loaded after site.css on /clutchly and /orbit-shift pages (body class "app-page").
+ * The colors below are Clutchly's night purple and orange; orbit-shift.css re-themes them.
  */
 
 body.clutchly {
@@ -26,9 +27,9 @@ body.clutchly {
   --font-display: system-ui, -apple-system, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-.clutchly h1,
-.clutchly h2,
-.clutchly h3 {
+.app-page h1,
+.app-page h2,
+.app-page h3 {
   font-weight: 750;
   letter-spacing: -0.02em;
 }
@@ -61,7 +62,7 @@ body.clutchly {
 
 /* Navigation */
 
-.clutchly .nav {
+.app-page .nav {
   /* Stays glass from the start: the hero behind it is dark in both themes. */
   animation: none;
 }
@@ -179,7 +180,7 @@ body.clutchly {
 }
 
 @media (max-width: 26rem) {
-  .nav--clutchly {
+  .nav--app {
     gap: 0.2rem;
     padding-inline: 0.35rem;
   }
@@ -203,7 +204,7 @@ body.clutchly {
     display: none;
   }
 
-  .nav--clutchly .nav__link {
+  .nav--app .nav__link {
     padding-inline: 0.4rem;
   }
 
@@ -980,7 +981,7 @@ main > .c-section:last-child {
 
 /* Footer */
 
-.clutchly .footer__inner {
+.app-page .footer__inner {
   flex-direction: column;
   align-items: flex-start;
 }

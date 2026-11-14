@@ -3,7 +3,7 @@ import json
 from django.shortcuts import render
 from django.utils.safestring import mark_safe
 
-from . import clutchly, content
+from . import clutchly, content, orbit_shift
 
 # Escape characters that could close the <script> tag early.
 _JSON_ESCAPES = {ord("<"): "\\u003C", ord(">"): "\\u003E", ord("&"): "\\u0026"}
@@ -40,7 +40,11 @@ def sitemap_xml(request):
     return render(
         request,
         "core/sitemap.xml",
-        {"site": content.SITE, "clutchly_entries": clutchly.sitemap_entries()},
+        {
+            "site": content.SITE,
+            "clutchly_entries": clutchly.sitemap_entries(),
+            "orbit_shift_entries": orbit_shift.sitemap_entries(),
+        },
         content_type="application/xml",
     )
 

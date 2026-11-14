@@ -4,6 +4,8 @@ _Eksik bilgi yok. Aşağıdakiler isteğe bağlı, ileride düşünülebilecek i
 
 ## Bekleyen
 
+- [ ] **Orbit Shift mağazalara çıkınca** App Store / Google Play rozetlerini aç (README → "Orbit Shift sayfaları").
+- [ ] **AdMob hesabı açılınca** yayıncı kimliğini (`pub-…`) `core/content_orbit_shift.py` → `admob_publisher_id`'ye yaz; `/app-ads.txt` yayına girer.
 
 - [ ] **Google Play yayınlanınca** Tenis Asistanı rozetini güncelle (README → "Google Play yayınlanınca").
 

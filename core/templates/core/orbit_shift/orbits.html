@@ -1,0 +1,24 @@
+{# Decorative orbit system drawn after the game: two rings, warned (gold) and lit (red) arcs, energy dots and the orb. #}
+<svg class="orbits orbits--{{ variant }}" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+  <g class="orbits__rings">
+    <circle cx="200" cy="200" r="170" class="orbits__glow"/>
+    <circle cx="200" cy="200" r="110" class="orbits__glow"/>
+    <circle cx="200" cy="200" r="170" class="orbits__ring"/>
+    <circle cx="200" cy="200" r="110" class="orbits__ring"/>
+    <circle cx="200" cy="200" r="5" class="orbits__core"/>
+  </g>
+  <g class="orbits__hazards">
+    <path d="M285 52.8A170 170 0 0 1 347.2 115" class="orbits__warn"/>
+    <path d="M52.8 285A170 170 0 0 1 30 200" class="orbits__hazard"/>
+    <path d="M303.4 237.6A110 110 0 0 1 270.7 284.3" class="orbits__hazard"/>
+    <path d="M96.6 162.4A110 110 0 0 1 136.9 109.9" class="orbits__warn"/>
+    <circle cx="115" cy="52.8" r="6" class="orbits__energy"/>
+    <circle cx="359.7" cy="258.1" r="6" class="orbits__energy"/>
+    <circle cx="145" cy="295.3" r="6" class="orbits__energy"/>
+  </g>
+  <g class="orbits__runner">
+    <path d="M354.1 128.1A170 170 0 0 1 370 200" class="orbits__trail"/>
+    <circle cx="370" cy="200" r="16" class="orbits__halo"/>
+    <circle cx="370" cy="200" r="9" class="orbits__orb"/>
+  </g>
+</svg>

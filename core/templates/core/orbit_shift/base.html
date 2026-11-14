@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}{{ page_text.title }}{% endblock %}
+{% block description %}{{ page_text.description }}{% endblock %}
+
+{% block theme_color %}<meta name="theme-color" content="#0d1625">{% endblock %}
+
+{% block icons %}
+  <link rel="icon" href="{% static 'core/img/orbit-shift/favicon-32.png' %}" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="{% static 'core/img/orbit-shift/apple-touch-icon.png' %}">
+{% endblock %}
+
+{# The game's font, served from this site (no third-party requests). #}
+{% block fonts %}
+  <link rel="preload" href="{% static 'core/fonts/space-grotesk-700.woff2' %}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{% static 'core/fonts/space-grotesk-500.woff2' %}" as="font" type="font/woff2" crossorigin>
+{% endblock %}
+
+{% block styles %}<link rel="stylesheet" href="{% static 'core/css/app-page.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/orbit-shift.css' %}">{% endblock %}
+
+{% block body_attrs %} class="app-page orbit-shift"{% endblock %}
+
+{% block meta %}
+  <link rel="canonical" href="{{ canonical }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ app.name }}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="{% firstof page_text.og_title page_text.title %}">
+  <meta property="og:description" content="{% firstof page_text.og_description page_text.description %}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ app.name }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% firstof page_text.og_title page_text.title %}">
+  <meta name="twitter:description" content="{% firstof page_text.og_description page_text.description %}">
+  <meta name="twitter:image" content="{{ og_image }}">
+  {# Safari on iPhone shows its "Open / Get" banner for the app. #}
+  {% if app.app_store.live %}<meta name="apple-itunes-app" content="app-id={{ app.app_store.id }}">{% endif %}
+  {% block extra_meta %}{% endblock %}
+{% endblock %}
+
+{% block nav %}{% include "core/orbit_shift/nav.html" %}{% endblock %}
+{% block footer %}{% include "core/orbit_shift/footer.html" %}{% endblock %}

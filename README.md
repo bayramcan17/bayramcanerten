@@ -163,6 +163,19 @@ git push
 - **Logo:** `core/static/core/img/clutchly/icon-96|192|384.webp`, `favicon-32.png`, `apple-touch-icon.png` (1254 px kaynaktan üretildi). Logo değişirse bu dosyaları aynı adlarla yeniden üret; paylaşım görselleri (`og-tr.jpg`, `og-en.jpg`) da logoyu içerir.
 - **Ekran görüntüleri:** `core/static/core/img/clutchly/<dil>/<ad>-400|800|full.webp`. Yenilemek için App Store ham görüntülerini (1320×2868) aynı adlarla bu üç boyutta WebP'ye çevir.
 
+## Orbit Shift sayfaları
+
+`/orbit-shift`, `/orbit-shift/privacy`, `/orbit-shift/support` — oyunun içindeki "Privacy policy" bağlantısı ve mağaza kayıtları bu adreslere gidiyor; **adresleri değiştirme**.
+
+- **Metinler:** `core/content_orbit_shift.py` (yalnızca İngilizce; oyun da İngilizce). Kaynak: `~/Desktop/OrbitShift/docs/web/` (`game-page.md`, `privacy.md`, `support.md`). Gizlilik politikası oyundakiyle aynı olmalı; değişirse önce o belgeyi güncelle. Metinlerde küçük bir işaretleme var: `**kalın**`, `[yazı](adres)`, `{email}`.
+- **Görünüm:** Clutchly ile ortak bileşenler `core/static/core/css/app-page.css`'te; oyunun renkleri (lacivert, camgöbeği, altın) ve fontu `orbit-shift.css`'te. Font Space Grotesk (SIL OFL, `core/static/core/fonts/`), sitenin kendisinden sunulur; üçüncü taraf istek yoktur.
+- **Görseller:** `core/static/core/img/orbit-shift/` — `icon-96|192|384.webp`, `favicon-32.png`, `apple-touch-icon.png`, `og.jpg`, `screens/<ad>-400|full.webp` (ham görüntüler 660×1434). Oyunun görünümü değişirse `OrbitShift/docs/web/assets/` içinden aynı adlarla yeniden üret.
+- **Mağazalar yayınlanınca:** `core/content_orbit_shift.py` → `COMMON`:
+  - App Store: `"app_store": {"live": True, "id": "<uygulama-id>", "url": "https://apps.apple.com/us/app/id<uygulama-id>"}` (Safari'nin "Aç / Al" şeridi de kendiliğinden açılır).
+  - Google Play: `"google_play"` içinde `"live": True` (adres hazır).
+  - Ana sayfa kartındaki rozetleri de `core/content.py`'de güncelle (App Store için Türkçe link: `https://apps.apple.com/tr/app/id<uygulama-id>?l=tr`).
+- **app-ads.txt:** AdMob hesabı açılınca `COMMON["admob_publisher_id"] = "pub-…"` yaz (AdMob → Ayarlar). O zamana kadar `https://bayramcanerten.com/app-ads.txt` 404 döner.
+
 ## Animasyonlar
 
 Tüm efektler `core/static/core/css/site.css` (sonundaki "Motion" bölümü) ve `core/static/core/js/site.js` içindedir; harici kütüphane yoktur.

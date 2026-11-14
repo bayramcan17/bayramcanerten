@@ -1,0 +1,39 @@
+{% extends "core/orbit_shift/base.html" %}
+
+{% block content %}
+<main class="doc">
+  <header class="doc__hero">
+    {% include "core/orbit_shift/orbits.html" with variant="doc" %}
+    <div class="container">
+      <p class="c-eyebrow c-eyebrow--icon enter" style="--i: 0">{% include "core/orbit_shift/app_icon.html" with size="eyebrow" %}{{ app.name }}</p>
+      <h1 class="doc__title enter" style="--i: 1">{{ page_text.heading }}</h1>
+      <p class="doc__updated enter" style="--i: 2"><time datetime="{{ page_text.effective_iso }}">{{ page_text.effective }}</time></p>
+    </div>
+  </header>
+
+  <div class="container doc__layout">
+    <nav class="toc" aria-labelledby="toc-title">
+      <p class="toc__title" id="toc-title">{{ ui.contents }}</p>
+      <ol class="toc__list">
+        {% for section in sections %}<li><a href="#{{ section.id }}">{{ section.title }}</a></li>{% endfor %}
+      </ol>
+    </nav>
+
+    <article class="doc__body">
+      <p class="doc__intro">{{ intro }}</p>
+      {% for section in sections %}
+        <section class="doc__section reveal" id="{{ section.id }}" aria-labelledby="{{ section.id }}-title">
+          <h2 id="{{ section.id }}-title"><span class="doc__index" aria-hidden="true">{{ forloop.counter|stringformat:"02d" }}</span>{{ section.title }}</h2>
+          {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+          {% if section.entries %}
+            <ul class="doc__list">
+              {% for entry in section.entries %}<li>{{ entry }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+          {% for paragraph in section.after %}<p>{{ paragraph }}</p>{% endfor %}
+        </section>
+      {% endfor %}
+    </article>
+  </div>
+</main>
+{% endblock %}

@@ -2,7 +2,7 @@ from django.templatetags.static import static
 from django.urls import path
 from django.views.generic import RedirectView
 
-from . import clutchly, views
+from . import clutchly, orbit_shift, views
 
 urlpatterns = [
     path("", views.index, name="index"),
@@ -19,4 +19,12 @@ urlpatterns = [
     path("clutchly/", RedirectView.as_view(url="/clutchly", query_string=True, permanent=True)),
     path("clutchly/privacy/", RedirectView.as_view(url="/clutchly/privacy", query_string=True, permanent=True)),
     path("clutchly/support/", RedirectView.as_view(url="/clutchly/support", query_string=True, permanent=True)),
+    # Orbit Shift: Neon Rush. The game and the store listings link to these exact URLs.
+    path("orbit-shift", orbit_shift.orbit_shift_page, {"page": "product"}, name="orbit_shift"),
+    path("orbit-shift/privacy", orbit_shift.orbit_shift_page, {"page": "privacy"}, name="orbit_shift_privacy"),
+    path("orbit-shift/support", orbit_shift.orbit_shift_page, {"page": "support"}, name="orbit_shift_support"),
+    path("orbit-shift/", RedirectView.as_view(url="/orbit-shift", query_string=True, permanent=True)),
+    path("orbit-shift/privacy/", RedirectView.as_view(url="/orbit-shift/privacy", query_string=True, permanent=True)),
+    path("orbit-shift/support/", RedirectView.as_view(url="/orbit-shift/support", query_string=True, permanent=True)),
+    path("app-ads.txt", orbit_shift.app_ads_txt, name="app_ads_txt"),
 ]

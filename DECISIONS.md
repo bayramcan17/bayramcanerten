@@ -108,3 +108,14 @@ Kullanıcı isteği: site "tek düze", daha canlı ve güncel teknikler. Harici 
 - **App Store (2026-11-14):** Clutchly yayında. Bölgesiz `https://apps.apple.com/app/id6821973888` kullanılıyor (ziyaretçiyi kendi mağazasına yönlendiriyor). Clutchly sayfalarına Safari Smart App Banner (`apple-itunes-app`), JSON-LD'ye `installUrl` eklendi; ana sayfa kartındaki rozet de linkli.
 - **App Store linkleri (2026-11-14):** ülkesiz `/app/id…` linki kullanıcıyı İngilizce mağazaya götürüyordu. Ana sayfadaki rozetler (Clutchly, Tenis Asistanı) `apps.apple.com/tr/app/id…?l=tr` (Türkiye mağazası, Türkçe); Clutchly sayfalarında Türkçe sayfa → aynı Türkçe link, İngilizce sayfa → `apps.apple.com/us/app/id…`. JSON-LD `installUrl` de sayfa diline göre.
 - **İngilizce başlık (2026-11-14):** kullanıcı isteğiyle App Store adıyla aynı yapıldı: "Clutchly: Basketball Alarm" (belgede "Basketball Alerts" yazıyordu). Türkçe başlık zaten App Store'daki adla aynı: "Clutchly: Basketbol Maç Takibi".
+
+## Orbit Shift sayfaları — 2026-11-14
+
+- `/orbit-shift`, `/orbit-shift/privacy`, `/orbit-shift/support` eklendi; ana sayfada ilk proje kartı. Metinler oyunun web kitinden (`OrbitShift/docs/web/`) birebir; bir betikle tüm cümlelerin sayfalarda geçtiği doğrulandı. Tek fark altbilgi: "© 2026 · Bayram Can Erten" (sitenin ortak biçimi).
+- **Dil:** yalnızca İngilizce. Oyun ve mağaza kayıtları İngilizce, kit metni "final English copy"; gizlilik politikasının kaynağı yalnızca İngilizce. Ana sayfa kartı Türkçe.
+- **Görünüm:** Clutchly'nin bileşenleri ortak dosyaya alındı (`clutchly.css` → `app-page.css`, body sınıfı `app-page`); Clutchly'nin görünümü değişmedi. Oyunun paleti ve fontu `orbit-shift.css`'te. Hero'da oyundaki gibi iki yörünge, uyarılı (altın) ve yanan (kırmızı) yaylar, enerji noktaları ve dönen top (satır içi SVG, yalnızca hareket izni varsa döner).
+- **Font:** Space Grotesk 500/700, oyundaki TTF'lerden Latin alt kümesi WOFF2 (~16 KB her biri), siteden sunuluyor (Google Fonts yok; üçüncü taraf istek yok, testle korunuyor). OFL lisans metni yanında.
+- **Ekran görüntüleri:** kitteki görüntüler 660 px genişlikte; 400 px ve tam boy WebP. Oyun görüntülerinde durum çubuğu olmadığı için telefon çerçevesinde Dynamic Island çizilmiyor.
+- **Mağaza rozetleri:** "Coming soon" (oyun 16 Kasım 2026'da mağazalara gönderilecek). `COMMON["app_store"|"google_play"]["live"]` ile açılır.
+- **app-ads.txt:** kök adreste, `COMMON["admob_publisher_id"]` dolunca yayınlanır; AdMob hesabı henüz yok, bu yüzden şimdilik 404 (yer tutucu kimlikle yayınlamak yanlış olurdu).
+- Lighthouse (yerel, üretim ayarları): masaüstü 3 sayfa 100/100/100/100; mobil performans 98–99 (yerel sunucuda sıkıştırma/önbellek yok), diğerleri 100. CLS 0.

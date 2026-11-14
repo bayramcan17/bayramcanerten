@@ -44,6 +44,23 @@ SITE = {
     },
     "projects": [
         {
+            "name": "Orbit Shift: Neon Rush",
+            "summary": (
+                "İki yörünge, tek dokunuş. Topun merkezin etrafında döner; dokunup diğer "
+                "yörüngeye geçerek parlayan yaylardan kaçarsın. Sonsuz mod, 30 bölüm ve her gün "
+                "yeni bir günlük görev; internetsiz oynanır."
+            ),
+            "logo": {"src": "core/img/orbit-shift/icon-192.webp", "width": 192, "height": 192},
+            "logo_text": None,
+            "badges": [
+                {"kind": "web", "icon": "arrow", "label": "Oyun sayfası", "url": "/orbit-shift"},
+                {"kind": "soon", "icon": "appstore", "label": "App Store — Yakında", "url": None},
+                {"kind": "soon", "icon": "play", "label": "Google Play — Yakında", "url": None},
+            ],
+            "stack": ["Unity 6", "C#", "Google AdMob"],
+            "screenshots": [],
+        },
+        {
             "name": "Clutchly",
             "summary": (
                 "NBA'i uykundan olmadan takip et. Gece maçlarını Türkiye saatiyle gösterir, maç "

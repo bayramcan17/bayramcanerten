@@ -10,4 +10,9 @@
     {% endfor %}
   </url>
   {% endfor %}
+  {% for loc in orbit_shift_entries %}
+  <url>
+    <loc>{{ loc }}</loc>
+  </url>
+  {% endfor %}
 </urlset>

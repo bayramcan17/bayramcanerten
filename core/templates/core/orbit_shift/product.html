@@ -1,0 +1,78 @@
+{% extends "core/orbit_shift/base.html" %}
+{% load static %}
+
+{% block extra_meta %}<script type="application/ld+json">{{ json_ld }}</script>{% endblock %}
+
+{% block content %}
+<header class="c-hero o-hero" id="top" data-hero>
+  {% include "core/orbit_shift/orbits.html" with variant="hero" %}
+  <div class="c-hero__inner">
+    <div class="c-hero__copy">
+      <div class="c-hero__icon enter" style="--i: 0">{% include "core/orbit_shift/app_icon.html" with size="hero" %}</div>
+      <h1 class="wordmark enter" style="--i: 0"><span class="wordmark__orbit">Orbit</span> <span class="wordmark__shift">Shift</span><span class="wordmark__colon">: </span><span class="wordmark__sub">Neon Rush</span></h1>
+      <p class="c-hero__title enter" style="--i: 1">{{ page_text.headline }}</p>
+      <p class="c-hero__sub enter" style="--i: 2">{{ page_text.intro }}</p>
+      <div class="enter" style="--i: 3">{% include "core/orbit_shift/store_badges.html" %}</div>
+    </div>
+    <div class="c-hero__device enter" style="--i: 2">
+      <div class="phone phone--hero">
+        <img src="{% static hero.full %}" srcset="{% static hero.small %} 400w, {% static hero.full %} 660w" sizes="(min-width: 56rem) 18rem, 15rem" width="{{ app.screen_size.width }}" height="{{ app.screen_size.height }}" alt="{{ ui.screen_alt }} {{ screens.0.label }}" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="c-section container o-features-section" id="features" aria-labelledby="features-title">
+    <h2 class="c-section__title reveal" id="features-title">{{ page_text.features_title }}</h2>
+    <ul class="features o-features" role="list">
+      {% for feature in page_text.features %}
+        <li class="card feature reveal" data-spotlight data-tilt="4">
+          <span class="feature__icon">{% include "core/partials/icon.html" with name=feature.icon %}</span>
+          <p class="feature__text"><strong class="feature__lead">{{ feature.title }}</strong> {{ feature.text }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="c-section c-section--wide" id="screens" aria-labelledby="screens-title">
+    <div class="container">
+      <h2 class="c-section__title reveal" id="screens-title">{{ page_text.screens_title }}</h2>
+    </div>
+    <div class="carousel" data-carousel>
+      <button class="carousel__button carousel__button--prev" type="button" data-carousel-prev aria-label="{{ ui.previous }}" hidden>{% include "core/partials/icon.html" with name="chevron-left" %}</button>
+      <ul class="carousel__track" role="list" tabindex="0" aria-labelledby="screens-title" data-carousel-track>
+        {% for screen in screens %}
+          <li class="carousel__item">
+            <a class="phone phone--small" href="{% static screen.full %}" target="_blank" rel="noopener" data-lightbox="screen-{{ forloop.counter }}">
+              <img src="{% static screen.small %}" srcset="{% static screen.small %} 400w, {% static screen.full %} 660w" sizes="14rem" width="{{ app.screen_size.width }}" height="{{ app.screen_size.height }}" alt="{{ ui.screen_alt }} {{ screen.label }}" loading="lazy">
+            </a>
+            <dialog class="lightbox lightbox--tall" id="screen-{{ forloop.counter }}" aria-label="{{ screen.label }}">
+              <img src="{% static screen.full %}" width="{{ app.screen_size.width }}" height="{{ app.screen_size.height }}" alt="{{ ui.screen_alt }} {{ screen.label }}" loading="lazy">
+              <form method="dialog"><button class="lightbox__close" type="submit" aria-label="{{ ui.close }}">{% include "core/partials/icon.html" with name="close" %}</button></form>
+            </dialog>
+            <p class="carousel__label">{{ screen.label }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+      <button class="carousel__button carousel__button--next" type="button" data-carousel-next aria-label="{{ ui.next }}" hidden>{% include "core/partials/icon.html" with name="chevron-right" %}</button>
+    </div>
+  </section>
+
+  <section class="c-section container" id="details" aria-labelledby="details-title">
+    <h2 class="c-section__title reveal" id="details-title">{{ page_text.details_title }}</h2>
+    <div class="card details reveal" data-spotlight data-tilt="1.5">
+      <dl class="details__list">
+        {% for label, value in page_text.details %}
+          <div class="details__row"><dt>{{ label }}</dt><dd>{{ value }}</dd></div>
+        {% endfor %}
+      </dl>
+    </div>
+    <div class="c-cta reveal">
+      {% if not stores.app_store and not stores.google_play %}<p class="c-cta__note">{{ page_text.coming_soon }}</p>{% endif %}
+      {% include "core/orbit_shift/store_badges.html" %}
+      <p class="c-cta__links"><a href="{{ urls.support }}">{{ nav.support }}</a> <span aria-hidden="true">·</span> <a href="{{ urls.privacy }}">Privacy Policy</a> <span aria-hidden="true">·</span> Contact: <a href="mailto:{{ app.email }}">{{ app.email }}</a></p>
+    </div>
+  </section>
+</main>
+{% endblock %}

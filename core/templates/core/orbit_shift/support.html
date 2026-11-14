@@ -1,0 +1,31 @@
+{% extends "core/orbit_shift/base.html" %}
+
+{% block content %}
+<main class="doc">
+  <header class="doc__hero">
+    {% include "core/orbit_shift/orbits.html" with variant="doc" %}
+    <div class="container">
+      <p class="c-eyebrow c-eyebrow--icon enter" style="--i: 0">{% include "core/orbit_shift/app_icon.html" with size="eyebrow" %}{{ app.name }}</p>
+      <h1 class="doc__title enter" style="--i: 1">{{ page_text.heading }}</h1>
+    </div>
+  </header>
+
+  <div class="container doc__narrow">
+    <section class="card contact reveal" data-spotlight data-tilt="1.5" aria-label="{{ ui.write_to_me }}">
+      <span class="contact__icon">{% include "core/partials/icon.html" with name="mail" %}</span>
+      <p class="contact__intro">{{ intro }}</p>
+      <a class="button contact__button" href="mailto:{{ app.email }}?subject=Orbit%20Shift">{% include "core/partials/icon.html" with name="mail" %}{{ ui.write_to_me }}</a>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 class="c-section__title reveal" id="faq-title">{{ ui.faq_title }}</h2>
+      {% for question, answer in faq %}
+        <details class="faq__item reveal" name="faq">
+          <summary>{{ question }}{% include "core/partials/icon.html" with name="chevron" %}</summary>
+          <div class="faq__answer"><p>{{ answer }}</p></div>
+        </details>
+      {% endfor %}
+    </section>
+  </div>
+</main>
+{% endblock %}

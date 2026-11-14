@@ -1,0 +1,522 @@
+/* Orbit Shift: Neon Rush pages: app-page.css re-themed in the game's navy, cyan and gold.
+ * Loaded after site.css and app-page.css, only on /orbit-shift pages.
+ * Font: Space Grotesk (SIL OFL 1.1, see core/fonts/space-grotesk-OFL.txt), Latin subset.
+ */
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/space-grotesk-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/space-grotesk-700.woff2") format("woff2");
+}
+
+body.orbit-shift {
+  --bg: light-dark(#f2f6fb, #0d1625);
+  --surface: light-dark(#ffffff, #141d2e);
+  --surface-tint: light-dark(#e6edf6, #1b2740);
+  --ink: light-dark(#0e1a2d, #f4f7ff);
+  --ink-soft: light-dark(#475670, #98abc5);
+  --border: light-dark(#d9e2ee, #24314a);
+  --sea: light-dark(#04698f, #59d8ff);
+  --sea-strong: light-dark(#03506e, #8fe5ff);
+  --sea-bright: light-dark(#0889b9, #59d8ff);
+  --footer-bg: light-dark(#0d1625, #070c16);
+  --footer-ink: light-dark(#e3ebf7, #c9d5e6);
+  --glass: light-dark(rgb(255 255 255 / 0.76), rgb(20 29 46 / 0.76));
+  --spot: light-dark(rgb(4 105 143 / 0.08), rgb(89 216 255 / 0.1));
+  --glow: rgb(89 216 255 / 0.12);
+  /* "orange" is app-page.css's second accent: the game's energy gold here. */
+  --orange: #f4d277;
+  --orange-ink: light-dark(#7d5d00, #f4d277);
+  --night-1: #0a111d;
+  --night-2: #0d1625;
+  --night-3: #121f36;
+  --cyan: #59d8ff;
+  --gold: #f4d277;
+  --hazard: #ff7183;
+  --font-sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.orbit-shift h1,
+.orbit-shift h2,
+.orbit-shift h3,
+.orbit-shift strong {
+  font-weight: 700;
+}
+
+.orbit-shift h1,
+.orbit-shift h2,
+.orbit-shift h3 {
+  letter-spacing: -0.025em;
+}
+
+.orbit-shift .app-icon {
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1), 0 6px 14px -6px rgb(89 216 255 / 0.5);
+}
+
+.orbit-shift .app-icon--hero {
+  box-shadow: 0 18px 44px -12px rgb(89 216 255 / 0.55), 0 0 0 1px rgb(255 255 255 / 0.12);
+}
+
+/* Navy hero (same in both themes) */
+
+.orbit-shift .c-hero,
+.orbit-shift .doc__hero {
+  color: #f4f7ff;
+  background:
+    radial-gradient(ellipse 60% 55% at 78% 30%, rgb(89 216 255 / 0.16), transparent 70%),
+    radial-gradient(ellipse 55% 45% at 5% 100%, rgb(255 113 131 / 0.1), transparent 70%),
+    radial-gradient(ellipse 40% 35% at 30% 0%, rgb(244 210 119 / 0.08), transparent 70%),
+    linear-gradient(180deg, var(--night-1) 0%, var(--night-2) 55%, var(--night-3) 100%);
+}
+
+.orbit-shift .c-eyebrow {
+  color: #f4f7ff;
+}
+
+.orbit-shift .c-hero__inner {
+  z-index: 1;
+}
+
+.wordmark {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  column-gap: 0.32em;
+  row-gap: 0.2rem;
+  font-size: clamp(1.7rem, 4.6vw, 2.35rem);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.wordmark__orbit {
+  color: #f4f7ff;
+}
+
+.wordmark__shift {
+  color: var(--cyan);
+  text-shadow: 0 0 18px rgb(89 216 255 / 0.55);
+}
+
+/* Kept for screen readers and copy-paste ("Orbit Shift: Neon Rush"). */
+.wordmark__colon {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.wordmark__sub {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+  color: var(--gold);
+  font-size: 0.42em;
+  letter-spacing: 0.42em;
+  /* Letter spacing also trails the last letter; pull it back so the text centers. */
+  margin-right: -0.42em;
+}
+
+.wordmark__sub::before,
+.wordmark__sub::after {
+  content: "";
+  width: 2.25rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(244 210 119 / 0.7));
+}
+
+.wordmark__sub::after {
+  background: linear-gradient(90deg, rgb(244 210 119 / 0.7), transparent);
+  margin-left: -0.42em;
+}
+
+.orbit-shift .c-hero__title {
+  max-width: 16ch;
+  font-size: clamp(2.1rem, 5.6vw, 3.4rem);
+  letter-spacing: -0.03em;
+  background: linear-gradient(180deg, #fff 35%, #9eeaff 140%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.orbit-shift .c-hero__sub {
+  color: #b4c3d8;
+}
+
+.orbit-shift .c-hero__device::before {
+  background:
+    radial-gradient(closest-side, rgb(89 216 255 / 0.3), transparent),
+    radial-gradient(closest-side at 30% 70%, rgb(255 113 131 / 0.22), transparent);
+}
+
+@media (min-width: 56rem) {
+  .wordmark {
+    justify-content: flex-start;
+  }
+
+  .wordmark__sub {
+    justify-content: flex-start;
+  }
+
+  .wordmark__sub::before {
+    display: none;
+  }
+}
+
+/* Orbit system behind the hero */
+
+.orbits {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.orbits--hero {
+  width: min(44rem, 140vw);
+  top: calc(var(--nav-height) + 1rem);
+  left: 50%;
+  translate: -50% 0;
+  opacity: 0.35;
+}
+
+@media (min-width: 56rem) {
+  .orbits--hero {
+    width: 40rem;
+    top: 50%;
+    left: auto;
+    right: max(-6rem, calc((100vw - 64rem) / 2 - 8rem));
+    translate: 0 -46%;
+    opacity: 0.8;
+  }
+}
+
+.orbits--doc {
+  width: 26rem;
+  top: -4rem;
+  right: -7rem;
+  opacity: 0.45;
+}
+
+.orbits__ring {
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 3;
+  opacity: 0.55;
+}
+
+.orbits__glow {
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 14;
+  opacity: 0.08;
+}
+
+.orbits__core {
+  fill: #5b7fc0;
+}
+
+.orbits__hazard,
+.orbits__warn {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.orbits__hazard {
+  stroke: var(--hazard);
+}
+
+.orbits__warn {
+  stroke: var(--gold);
+  stroke-width: 10;
+  opacity: 0.85;
+  stroke-dasharray: 2 0;
+}
+
+.orbits__energy {
+  fill: var(--gold);
+}
+
+.orbits__trail {
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 6;
+  stroke-linecap: round;
+  opacity: 0.35;
+}
+
+.orbits__halo {
+  fill: var(--cyan);
+  opacity: 0.25;
+}
+
+.orbits__orb {
+  fill: var(--cyan);
+}
+
+.orbits__hazards,
+.orbits__runner {
+  transform-origin: 200px 200px;
+}
+
+/* Store badges */
+
+.orbit-shift .store-badge {
+  background: #070d18;
+}
+
+.orbit-shift a.store-badge:hover {
+  box-shadow: 0 10px 24px -10px var(--cyan);
+}
+
+.orbit-shift .store-badge--soon {
+  background: rgb(7 13 24 / 0.65);
+}
+
+.orbit-shift .store-badge--soon small {
+  color: var(--gold);
+}
+
+/* Phone frame */
+
+.orbit-shift .phone {
+  background: linear-gradient(145deg, #2e3a52, #070c16 40%, #232e44);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.12),
+    0 30px 60px -25px rgb(0 0 0 / 0.65),
+    0 12px 24px -12px rgb(13 40 80 / 0.5);
+}
+
+/* The game's screenshots have no status bar to sit under: no Dynamic Island. */
+.orbit-shift .phone::after {
+  content: none;
+}
+
+.orbit-shift .phone--small:hover {
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.12),
+    0 34px 60px -24px rgb(0 0 0 / 0.6),
+    0 0 0 3px color-mix(in oklab, var(--cyan) 60%, transparent);
+}
+
+/* Sections */
+
+.orbit-shift .c-section__title::after {
+  background: linear-gradient(90deg, var(--sea), var(--gold));
+}
+
+@media (min-width: 72rem) {
+  .o-features-section {
+    max-width: 72rem;
+  }
+}
+
+/* Eight features: one column on phones, then 2 × 4, then 4 × 2. */
+.o-features {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 36rem) {
+  .o-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 72rem) {
+  .o-features {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .orbit-shift .feature {
+    flex-direction: column;
+  }
+}
+
+.orbit-shift .feature {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.orbit-shift .feature__icon,
+.orbit-shift .contact__icon {
+  flex: none;
+  color: var(--cyan);
+  background:
+    radial-gradient(circle at 30% 25%, rgb(89 216 255 / 0.28), transparent 70%),
+    linear-gradient(145deg, #1a2a45, #0a1220);
+  box-shadow: inset 0 0 0 1px rgb(89 216 255 / 0.35), 0 8px 18px -8px rgb(89 216 255 / 0.55);
+}
+
+.orbit-shift .feature:nth-child(3n + 2) .feature__icon {
+  color: var(--gold);
+  box-shadow: inset 0 0 0 1px rgb(244 210 119 / 0.35), 0 8px 18px -8px rgb(244 210 119 / 0.45);
+}
+
+.orbit-shift .feature:nth-child(3n) .feature__icon {
+  color: var(--hazard);
+  box-shadow: inset 0 0 0 1px rgb(255 113 131 / 0.35), 0 8px 18px -8px rgb(255 113 131 / 0.45);
+}
+
+.feature__lead {
+  color: var(--ink);
+}
+
+/* Details */
+
+.details__list {
+  display: grid;
+  margin: 0;
+}
+
+.details__row {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 9rem) 1fr;
+  gap: var(--space-4);
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.details__row:first-child {
+  padding-top: 0;
+}
+
+.details__row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.details__row dt {
+  color: var(--ink-soft);
+}
+
+.details__row dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.orbit-shift .c-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.c-cta__note {
+  font-weight: 700;
+  font-size: var(--text-lg);
+}
+
+.c-cta__links {
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}
+
+/* Document pages */
+
+.orbit-shift .doc__updated {
+  color: #b4c3d8;
+}
+
+.orbit-shift .doc__hero .container {
+  position: relative;
+}
+
+.doc__intro {
+  margin-bottom: var(--space-5);
+  font-size: var(--text-lg);
+}
+
+.orbit-shift .doc__section ul + p,
+.orbit-shift .doc__section p + ul {
+  margin-top: var(--space-3);
+}
+
+.orbit-shift .doc__list li::before {
+  background: var(--sea);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--sea) 22%, transparent);
+}
+
+.orbit-shift .doc__body a,
+.orbit-shift .faq__answer a,
+.orbit-shift .contact__intro a {
+  overflow-wrap: anywhere;
+}
+
+.orbit-shift .faq__answer strong,
+.orbit-shift .doc__body strong {
+  color: var(--ink);
+}
+
+/* Motion */
+
+@media (prefers-reduced-motion: no-preference) {
+  .wordmark.enter {
+    animation-name: enter-focus;
+  }
+
+  .orbits__runner {
+    animation: orbit-spin 9s linear infinite;
+  }
+
+  .orbits__hazards {
+    animation: orbit-spin 60s linear infinite reverse;
+  }
+
+  .orbits__halo {
+    animation: orb-pulse 1.8s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .orbits__warn {
+    animation: warn-blink 2.4s ease-in-out infinite;
+  }
+
+  .wordmark__shift {
+    animation: neon 4s ease-in-out 1.2s infinite;
+  }
+}
+
+@keyframes orbit-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes orb-pulse {
+  50% {
+    scale: 1.35;
+    opacity: 0.1;
+  }
+}
+
+@keyframes warn-blink {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes neon {
+  50% {
+    text-shadow: 0 0 26px rgb(89 216 255 / 0.85);
+  }
+}
