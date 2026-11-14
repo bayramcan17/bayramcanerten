@@ -105,3 +105,4 @@ Kullanıcı isteği: site "tek düze", daha canlı ve güncel teknikler. Harici 
 - Logo henüz yok; "C" harfli geçici ikon.
 - Belge sayfalarında (gizlilik, destek) belirme animasyonu saydamlık kullanmaz: metin her an tam okunur kalır.
 - **Logo (2026-10-13):** kullanıcının gönderdiği 1254 px ikon kaynak alındı; görselin tamamı kullanılıyor ve iOS gibi %22,5 köşe yuvarlaklığıyla gösteriliyor (iPhone'daki görünümün aynısı). Clutchly sayfalarının favicon'u ve ana ekran ikonu da bu logo.
+- **App Store (2026-11-14):** Clutchly yayında. Bölgesiz `https://apps.apple.com/app/id6821973888` kullanılıyor (ziyaretçiyi kendi mağazasına yönlendiriyor). Clutchly sayfalarına Safari Smart App Banner (`apple-itunes-app`), JSON-LD'ye `installUrl` eklendi; ana sayfa kartındaki rozet de linkli.

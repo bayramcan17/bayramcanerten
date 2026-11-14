@@ -154,6 +154,9 @@ def _software_json_ld(lang, url):
         "url": url,
         "author": {"@type": "Person", "name": content.SITE["name"], "url": content.SITE["url"]},
     }
+    app_store = content_clutchly.COMMON["app_store"]
+    if app_store["live"]:
+        data["installUrl"] = app_store["url"]
     return mark_safe(json.dumps(data, ensure_ascii=False).translate(_JSON_ESCAPES))
 
 

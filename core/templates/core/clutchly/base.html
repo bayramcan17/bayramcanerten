@@ -37,6 +37,8 @@
   <meta name="twitter:title" content="{{ page_text.title }}">
   <meta name="twitter:description" content="{{ page_text.description }}">
   <meta name="twitter:image" content="{{ og_image }}">
+  {# Safari on iPhone shows its "Open / Get" banner for the app. #}
+  {% if app.app_store.live %}<meta name="apple-itunes-app" content="app-id={{ app.app_store.id }}">{% endif %}
   {% block extra_meta %}{% endblock %}
 {% endblock %}
 

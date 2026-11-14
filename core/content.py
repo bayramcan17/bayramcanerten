@@ -54,7 +54,12 @@ SITE = {
             "logo_text": None,
             "badges": [
                 {"kind": "web", "icon": "arrow", "label": "Ürün sayfası", "url": "/clutchly"},
-                {"kind": "soon", "icon": "appstore", "label": "App Store — Yakında", "url": None},
+                {
+                    "kind": "appstore",
+                    "icon": "appstore",
+                    "label": "App Store",
+                    "url": "https://apps.apple.com/app/id6821973888",
+                },
                 {"kind": "soon", "icon": "play", "label": "Google Play — Yakında", "url": None},
             ],
             "stack": ["SwiftUI", "AlarmKit", "ActivityKit", "WidgetKit", "Supabase", "RevenueCat"],

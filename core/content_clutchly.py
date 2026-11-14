@@ -11,8 +11,9 @@ COMMON = {
     "name": "Clutchly",
     "email": "bayrammcan17@gmail.com",
     "controller": "Bayram Can Erten",
-    # Set "live": True once the App Store page exists; the badge then links to it.
-    "app_store": {"live": False, "url": "https://apps.apple.com/app/id6821973888"},
+    # Live on the App Store since November 2026; the badge links here.
+    # The region-free URL forwards each visitor to their own storefront.
+    "app_store": {"live": True, "id": "6821973888", "url": "https://apps.apple.com/app/id6821973888"},
     "stack": ["SwiftUI", "AlarmKit", "ActivityKit", "WidgetKit", "Supabase", "RevenueCat"],
     # Raw captures are 1320×2868; WebP copies live in core/static/core/img/clutchly/<lang>/.
     "screen_size": {"width": 1320, "height": 2868},

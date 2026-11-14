@@ -190,8 +190,12 @@ class ClutchlyTests(SimpleTestCase):
 
     def test_app_store_badge_waits_until_live(self):
         html = self.get("/clutchly?lang=en").content.decode()
-        if content_clutchly.COMMON["app_store"]["live"]:
-            self.assertIn(content_clutchly.COMMON["app_store"]["url"], html)
+        app_store = content_clutchly.COMMON["app_store"]
+        if app_store["live"]:
+            self.assertIn(f'<a class="store-badge" href="{app_store["url"]}" target="_blank" rel="noopener">', html)
+            self.assertIn(f'<meta name="apple-itunes-app" content="app-id={app_store["id"]}">', html)
+            home = self.get("/").content.decode()
+            self.assertIn(f'href="{app_store["url"]}"', home)
         else:
             self.assertIn("Coming soon", html)
             self.assertNotIn(content_clutchly.COMMON["app_store"]["url"], html)

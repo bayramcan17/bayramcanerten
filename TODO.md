@@ -4,7 +4,6 @@ _Eksik bilgi yok. Aşağıdakiler isteğe bağlı, ileride düşünülebilecek i
 
 ## Bekleyen
 
-- [ ] **Clutchly App Store'a çıkınca** `COMMON["app_store"]["live"] = True` ve ana sayfa rozeti (README).
 
 - [ ] **Google Play yayınlanınca** Tenis Asistanı rozetini güncelle (README → "Google Play yayınlanınca").
 
@@ -16,6 +15,8 @@ _Eksik bilgi yok. Aşağıdakiler isteğe bağlı, ileride düşünülebilecek i
 - [ ] Blog/notlar sayfası, İngilizce sürüm, Tenis Asistanı tanıtım sayfası, /now sayfası (PLAN.md Faz 8).
 
 ## Tamamlananlar
+
+- [x] Clutchly App Store'da yayında (2026-11-14): rozetler gerçek linke döndü, Smart App Banner eklendi.
 
 - [x] Clutchly logosu (2026-10-13): ürün sayfası, menü, Pro kartı, ana sayfa kartı, favicon ve paylaşım görselleri.
 
