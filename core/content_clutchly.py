@@ -308,7 +308,8 @@ TEXT = {
         "nav": {"product": "Clutchly", "privacy": "Privacy", "support": "Support"},
         "not_affiliated": "Clutchly is not affiliated with the NBA.",
         "product": {
-            "title": "Clutchly: Basketball Alerts",
+            # Matches the App Store name (2026-11-14); clutchly-site.md still says "Basketball Alerts".
+            "title": "Clutchly: Basketball Alarm",
             "description": (
                 "Follow the NBA without losing sleep. Clutchly shows late games in your time zone, "
                 "wakes you up when a game is heading into a close finish, and tells you in the morning "
