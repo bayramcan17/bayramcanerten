@@ -5,7 +5,6 @@ _Eksik bilgi yok. Aşağıdakiler isteğe bağlı, ileride düşünülebilecek i
 ## Bekleyen
 
 - [ ] **Orbit Shift mağazalara çıkınca** App Store / Google Play rozetlerini aç (README → "Orbit Shift sayfaları").
-- [ ] **AdMob hesabı açılınca** yayıncı kimliğini (`pub-…`) `core/content_orbit_shift.py` → `admob_publisher_id`'ye yaz; `/app-ads.txt` yayına girer.
 
 - [ ] **Google Play yayınlanınca** Tenis Asistanı rozetini güncelle (README → "Google Play yayınlanınca").
 
@@ -17,6 +16,8 @@ _Eksik bilgi yok. Aşağıdakiler isteğe bağlı, ileride düşünülebilecek i
 - [ ] Blog/notlar sayfası, İngilizce sürüm, Tenis Asistanı tanıtım sayfası, /now sayfası (PLAN.md Faz 8).
 
 ## Tamamlananlar
+
+- [x] `app-ads.txt` yayında (2026-11-19): AdMob yayıncı kimliği `pub-6390161146136411`.
 
 - [x] Clutchly App Store'da yayında (2026-11-14): rozetler gerçek linke döndü, Smart App Banner eklendi.
 

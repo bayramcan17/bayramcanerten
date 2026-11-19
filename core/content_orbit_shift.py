@@ -17,8 +17,9 @@ COMMON = {
         "live": False,
         "url": "https://play.google.com/store/apps/details?id=com.bayramcanerten.orbitshift",
     },
-    # AdMob publisher ID ("pub-…", AdMob > Settings). While None, /app-ads.txt answers 404.
-    "admob_publisher_id": None,
+    # AdMob publisher ID (AdMob > Settings), from OrbitShift/docs/web/app-ads.txt. Served at /app-ads.txt;
+    # set to None and the URL answers 404.
+    "admob_publisher_id": "pub-6390161146136411",
     "stack": ["Unity 6", "C#", "Google AdMob"],
     # Raw captures are 660×1434; WebP copies live in core/static/core/img/orbit-shift/screens/.
     "screen_size": {"width": 660, "height": 1434},

@@ -174,7 +174,7 @@ git push
   - App Store: `"app_store": {"live": True, "id": "<uygulama-id>", "url": "https://apps.apple.com/us/app/id<uygulama-id>"}` (Safari'nin "Aç / Al" şeridi de kendiliğinden açılır).
   - Google Play: `"google_play"` içinde `"live": True` (adres hazır).
   - Ana sayfa kartındaki rozetleri de `core/content.py`'de güncelle (App Store için Türkçe link: `https://apps.apple.com/tr/app/id<uygulama-id>?l=tr`).
-- **app-ads.txt:** AdMob hesabı açılınca `COMMON["admob_publisher_id"] = "pub-…"` yaz (AdMob → Ayarlar). O zamana kadar `https://bayramcanerten.com/app-ads.txt` 404 döner.
+- **app-ads.txt:** `https://bayramcanerten.com/app-ads.txt` yayında; yayıncı kimliği `COMMON["admob_publisher_id"]` (`pub-6390161146136411`, kaynak `OrbitShift/docs/web/app-ads.txt`). Başka bir uygulama da AdMob kullanırsa aynı satır yeterli (kimlik hesap başına).
 
 ## Animasyonlar
 

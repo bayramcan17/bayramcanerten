@@ -119,3 +119,4 @@ Kullanıcı isteği: site "tek düze", daha canlı ve güncel teknikler. Harici 
 - **Mağaza rozetleri:** "Coming soon" (oyun 16 Kasım 2026'da mağazalara gönderilecek). `COMMON["app_store"|"google_play"]["live"]` ile açılır.
 - **app-ads.txt:** kök adreste, `COMMON["admob_publisher_id"]` dolunca yayınlanır; AdMob hesabı henüz yok, bu yüzden şimdilik 404 (yer tutucu kimlikle yayınlamak yanlış olurdu).
 - Lighthouse (yerel, üretim ayarları): masaüstü 3 sayfa 100/100/100/100; mobil performans 98–99 (yerel sunucuda sıkıştırma/önbellek yok), diğerleri 100. CLS 0.
+- **app-ads.txt (2026-11-19):** AdMob hesabı açıldı; oyun deposundaki kit `pub-6390161146136411` ile güncellendi ("publish as is"). `/app-ads.txt` artık bu satırı `text/plain` olarak sunuyor.
