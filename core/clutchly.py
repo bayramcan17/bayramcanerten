@@ -4,14 +4,12 @@ The three URLs stay fixed (App Store links point at them). The language comes fr
 `?lang=tr|en`, otherwise from Accept-Language, otherwise English. No cookies are set.
 """
 
-import json
-
 from django.http import Http404
 from django.shortcuts import render
 from django.utils.cache import patch_vary_headers
-from django.utils.safestring import mark_safe
 
 from . import content, content_clutchly
+from .jsonld import json_ld
 
 PAGES = {
     "product": "/clutchly",
@@ -20,9 +18,6 @@ PAGES = {
 }
 
 EMAIL = object()  # Marker for "{email}" inside a text, rendered as a mailto link.
-
-# Escape characters that could close the <script> tag early.
-_JSON_ESCAPES = {ord("<"): "\\u003C", ord(">"): "\\u003E", ord("&"): "\\u0026"}
 
 
 def negotiate_language(request):
@@ -158,7 +153,7 @@ def _software_json_ld(lang, url):
     app_store = content_clutchly.COMMON["app_store"]
     if app_store["live"]:
         data["installUrl"] = app_store["urls"][lang]
-    return mark_safe(json.dumps(data, ensure_ascii=False).translate(_JSON_ESCAPES))
+    return json_ld(data)
 
 
 def sitemap_entries():

@@ -1,5 +1,7 @@
 # Kararlar
 
+Sitenin nasıl ve neden böyle kurulduğunun kaydı, tarih sırasıyla. "Faz" başlıkları ilk kurulum planının aşamalarıdır (plan tamamlandı ve kaldırıldı; git geçmişinde duruyor).
+
 ## Faz 0 — 2026-09-26
 
 | Konu | Karar | Not |

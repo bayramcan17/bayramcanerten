@@ -1,3 +1,4 @@
+# Not needed to run the site
 .venv
 .idea
 .claude
@@ -6,6 +7,6 @@ staticfiles
 __pycache__
 *.pyc
 .env*
-PLAN.md
-DECISIONS.md
-TODO.md
+docs/
+README.md
+core/tests.py

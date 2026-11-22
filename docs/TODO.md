@@ -10,10 +10,10 @@ _Eksik bilgi yok. Aşağıdakiler isteğe bağlı, ileride düşünülebilecek i
 
 ## İsteğe bağlı
 
-- [ ] **Kişisel e-posta** (`bayram@bayramcanerten.com`) — PLAN.md Faz 7. Şimdilik atlandı.
-- [ ] **Fontu kendi sunucumuzda barındırma** — Google Fonts yerine; ziyaretçi IP'si Google'a gitmez.
+- [ ] **Kişisel e-posta** (`bayram@bayramcanerten.com`) — şimdilik atlandı. DNS GoDaddy'de; seçenekler: ücretsiz yönlendirme (ör. ImprovMX) veya ücretli posta kutusu. MX/TXT + SPF/DKIM/DMARC kayıtları GoDaddy'ye eklenir.
+- [ ] **Ana sayfa fontunu (Fraunces) kendi sunucumuzda barındırma** — Google Fonts yerine; ziyaretçi IP'si Google'a gitmez. Uygulama sayfaları zaten üçüncü taraf istek yapmıyor.
 - [ ] **Ziyaretçi istatistiği** — Vercel Web Analytics (çerezsiz, Hobby'de ücretsiz kota).
-- [ ] Blog/notlar sayfası, İngilizce sürüm, Tenis Asistanı tanıtım sayfası, /now sayfası (PLAN.md Faz 8).
+- [ ] Blog/notlar sayfası, ana sayfanın İngilizce sürümü, Tenis Asistanı tanıtım sayfası, /now sayfası.
 
 ## Tamamlananlar
 

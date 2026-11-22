@@ -1,12 +1,7 @@
-import json
-
 from django.shortcuts import render
-from django.utils.safestring import mark_safe
 
 from . import clutchly, content, orbit_shift
-
-# Escape characters that could close the <script> tag early.
-_JSON_ESCAPES = {ord("<"): "\\u003C", ord(">"): "\\u003E", ord("&"): "\\u0026"}
+from .jsonld import json_ld
 
 
 def _person_json_ld():
@@ -21,7 +16,7 @@ def _person_json_ld():
         "alumniOf": {"@type": "CollegeOrUniversity", "name": site["school"]},
         "sameAs": [social["url"] for social in site["socials"]],
     }
-    return mark_safe(json.dumps(data, ensure_ascii=False).translate(_JSON_ESCAPES))
+    return json_ld(data)
 
 
 def index(request):

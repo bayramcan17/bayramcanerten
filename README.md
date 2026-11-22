@@ -1,8 +1,15 @@
 # bayramcanerten.com
 
-Kişisel kartvizit sitesi. Django 5.2 LTS; Vercel'de (Hobby) Vercel Function olarak çalışır. Veritabanı yoktur.
+Kişisel kartvizit sitesi ve uygulamalarımın tanıtım/gizlilik/destek sayfaları (Clutchly, Orbit Shift). Django 5.2 LTS; Vercel'de (Hobby) Vercel Function olarak çalışır. Veritabanı, çerez ve kullanıcı girişi yoktur.
 
 Canlı: https://bayramcanerten.com
+
+| Adres | İçerik |
+|---|---|
+| `/` | Ana sayfa (Türkçe): projeler ve işletmeler |
+| `/clutchly`, `/clutchly/privacy`, `/clutchly/support` | Clutchly (TR/EN) |
+| `/orbit-shift`, `/orbit-shift/privacy`, `/orbit-shift/support` | Orbit Shift: Neon Rush (EN) |
+| `/app-ads.txt`, `/robots.txt`, `/sitemap.xml` | Mağaza/arama motoru dosyaları |
 
 ## Kurulum
 
@@ -31,7 +38,7 @@ Testler; ana sayfayı, 404'ü, SEO etiketlerini, `robots.txt`/`sitemap.xml`'i ve
 
 ## İçerik düzenleme
 
-Sitedeki **tüm** metinler ve linkler `core/content.py` dosyasındadır. Şablonlarda sabit metin yoktur; çoğu değişiklik için yalnızca bu dosyayı düzenlemek yeterlidir.
+Ana sayfanın **tüm** metinleri ve linkleri `core/content.py` dosyasındadır; uygulama sayfalarınınkiler `core/content_clutchly.py` ve `core/content_orbit_shift.py`'dedir. Şablonlarda sabit metin yoktur; çoğu değişiklik için yalnızca bu dosyaları düzenlemek yeterlidir.
 
 ### Yeni proje ekleme
 
@@ -188,10 +195,25 @@ Tüm efektler `core/static/core/css/site.css` (sonundaki "Motion" bölümü) ve 
 ## Proje yapısı
 
 ```
-config/            Django ayarları, URL kökü, WSGI
-core/content.py    TÜM site içeriği
-core/templates/    base, index, 404 ve bölüm parçaları (partials/)
-core/static/core/  css/site.css, js/site.js, img/, favicon/
-DECISIONS.md       Alınan kararlar ve gerekçeleri
-PLAN.md            İlk uygulama planı
+config/                    Django ayarları, URL kökü, WSGI
+core/
+  content.py               Ana sayfanın TÜM metinleri ve linkleri
+  content_clutchly.py      Clutchly sayfalarının metinleri (TR/EN)
+  content_orbit_shift.py   Orbit Shift sayfalarının metinleri (EN)
+  views.py                 Ana sayfa, 404, robots.txt, sitemap.xml
+  clutchly.py              Clutchly sayfaları (dil seçimi dahil)
+  orbit_shift.py           Orbit Shift sayfaları ve app-ads.txt
+  jsonld.py                Arama motorları için JSON-LD yardımcısı
+  urls.py                  Tüm adresler
+  tests.py                 Testler
+  templates/core/          base, index, 404; partials/, clutchly/, orbit_shift/
+  static/core/             css/, js/, img/, fonts/, favicon/
+docs/
+  DECISIONS.md             Alınan kararlar ve gerekçeleri
+  TODO.md                  Bekleyen ve isteğe bağlı işler
+vercel.json                Vercel bölgesi (Frankfurt)
 ```
+
+## Haklar
+
+Bu depo, sitenin kaynağını şeffaf olması için açık tutar; bir açık kaynak lisansı yoktur. Metinler, logolar, ekran görüntüleri ve uygulama adları Bayram Can Erten'e aittir. Space Grotesk fontu SIL Open Font License ile dağıtılır (`core/static/core/fonts/space-grotesk-OFL.txt`).

@@ -5,7 +5,6 @@ to them. English only, like the game. /app-ads.txt lives here too because AdMob 
 for this game.
 """
 
-import json
 import re
 
 from django.http import Http404, HttpResponse
@@ -15,15 +14,13 @@ from django.utils.safestring import mark_safe
 
 from . import content
 from . import content_orbit_shift as text
+from .jsonld import json_ld
 
 PAGES = {
     "product": "/orbit-shift",
     "privacy": "/orbit-shift/privacy",
     "support": "/orbit-shift/support",
 }
-
-# Escape characters that could close the <script> tag early.
-_JSON_ESCAPES = {ord("<"): "\\u003C", ord(">"): "\\u003E", ord("&"): "\\u0026"}
 
 _BOLD = re.compile(r"\*\*(.+?)\*\*")
 _LINK = re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)")
@@ -131,7 +128,7 @@ def _game_json_ld(url):
     installs = [link for link in _store_urls().values() if link]
     if installs:
         data["installUrl"] = installs[0] if len(installs) == 1 else installs
-    return mark_safe(json.dumps(data, ensure_ascii=False).translate(_JSON_ESCAPES))
+    return json_ld(data)
 
 
 def app_ads_txt(request):
