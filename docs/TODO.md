@@ -6,8 +6,6 @@ _Eksik bilgi yok. Aşağıdakiler isteğe bağlı, ileride düşünülebilecek i
 
 - [ ] **Orbit Shift mağazalara çıkınca** App Store / Google Play rozetlerini aç (README → "Orbit Shift sayfaları").
 
-- [ ] **Google Play yayınlanınca** Tenis Asistanı rozetini güncelle (README → "Google Play yayınlanınca").
-
 ## İsteğe bağlı
 
 - [ ] **Kişisel e-posta** (`bayram@bayramcanerten.com`) — şimdilik atlandı. DNS GoDaddy'de; seçenekler: ücretsiz yönlendirme (ör. ImprovMX) veya ücretli posta kutusu. MX/TXT + SPF/DKIM/DMARC kayıtları GoDaddy'ye eklenir.
@@ -16,6 +14,8 @@ _Eksik bilgi yok. Aşağıdakiler isteğe bağlı, ileride düşünülebilecek i
 - [ ] Blog/notlar sayfası, ana sayfanın İngilizce sürümü, Tenis Asistanı tanıtım sayfası, /now sayfası.
 
 ## Tamamlananlar
+
+- [x] Tenis Asistanı Google Play'de yayında (2026-11-25): ana sayfa rozeti linkli (`com.tennisassistant.app`, Türkçe `hl=tr`); kartta Wear OS da anılıyor.
 
 - [x] `app-ads.txt` yayında (2026-11-19): AdMob yayıncı kimliği `pub-6390161146136411`.
 

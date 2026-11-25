@@ -87,7 +87,7 @@ SITE = {
             "name": "Tenis Asistanı",
             "summary": (
                 "Kortta canlı skor tutan, antrenmanları ve ekipman ömrünü "
-                "takip eden tenis uygulaması. Apple Watch ile bilekten skor."
+                "takip eden tenis uygulaması. Apple Watch ve Wear OS saatle bilekten skor."
             ),
             "logo": {"src": "core/img/tenis-asistani.webp", "width": 168, "height": 168},
             "logo_text": None,
@@ -99,9 +99,14 @@ SITE = {
                     "label": "App Store",
                     "url": "https://apps.apple.com/tr/app/id6791199819?l=tr",
                 },
-                {"kind": "soon", "icon": "play", "label": "Google Play — Yakında", "url": None},
+                {
+                    "kind": "googleplay",
+                    "icon": "play",
+                    "label": "Google Play",
+                    "url": "https://play.google.com/store/apps/details?id=com.tennisassistant.app&hl=tr",
+                },
             ],
-            "stack": ["SwiftUI", "SwiftData", "watchOS", "Jetpack Compose", "Django"],
+            "stack": ["SwiftUI", "SwiftData", "watchOS", "Jetpack Compose", "Wear OS", "Django"],
             "screenshots": [],
         },
         {

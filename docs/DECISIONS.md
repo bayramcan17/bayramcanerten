@@ -122,3 +122,8 @@ Kullanıcı isteği: site "tek düze", daha canlı ve güncel teknikler. Harici 
 - **app-ads.txt:** kök adreste, `COMMON["admob_publisher_id"]` dolunca yayınlanır; AdMob hesabı henüz yok, bu yüzden şimdilik 404 (yer tutucu kimlikle yayınlamak yanlış olurdu).
 - Lighthouse (yerel, üretim ayarları): masaüstü 3 sayfa 100/100/100/100; mobil performans 98–99 (yerel sunucuda sıkıştırma/önbellek yok), diğerleri 100. CLS 0.
 - **app-ads.txt (2026-11-19):** AdMob hesabı açıldı; oyun deposundaki kit `pub-6390161146136411` ile güncellendi ("publish as is"). `/app-ads.txt` artık bu satırı `text/plain` olarak sunuyor.
+
+## Tenis Asistanı Google Play — 2026-11-26
+
+- Android sürümü (telefon + Wear OS) 2026-11-25'ten beri Play'de. Ana sayfa rozeti `https://play.google.com/store/apps/details?id=com.tennisassistant.app&hl=tr` (App Store'daki `?l=tr` ile aynı gerekçe: Türkçe sayfa, Türkçe mağaza).
+- Kart metni "Apple Watch ve Wear OS saatle bilekten skor" oldu; teknoloji etiketlerine Wear OS eklendi.

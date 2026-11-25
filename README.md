@@ -106,18 +106,12 @@ Ana sayfanın **tüm** metinleri ve linkleri `core/content.py` dosyasındadır; 
 
 Ana sayfa Türkçe olduğu için App Store linklerinde ülke ve dil açıkça yazılır: `https://apps.apple.com/tr/app/id<uygulama-id>?l=tr`. Ülkesiz `/app/id…` linkini Apple bazen İngilizce mağazada açar; `/tr/` tek başına da web'de İngilizce gösterir, Türkçe için `?l=tr` gerekir.
 
-### Google Play yayınlanınca (Tenis Asistanı)
+### Google Play linkleri
 
-`core/content.py` içinde Tenis Asistanı'nın rozetlerinde şu satırı:
-
-```python
-{"kind": "soon", "icon": "play", "label": "Google Play — Yakında", "url": None},
-```
-
-şununla değiştir (linki Play Console'daki mağaza adresinden al):
+Aynı mantıkla Türkçe için `&hl=tr` eklenir: `https://play.google.com/store/apps/details?id=<paket-adı>&hl=tr`. Bir uygulama Play'e çıkınca rozetini `soon` yerine şöyle yaz:
 
 ```python
-{"kind": "googleplay", "icon": "play", "label": "Google Play", "url": "https://play.google.com/store/apps/details?id=..."},
+{"kind": "googleplay", "icon": "play", "label": "Google Play", "url": "https://play.google.com/store/apps/details?id=...&hl=tr"},
 ```
 
 Commit + push; site birkaç saniye içinde güncellenir.
